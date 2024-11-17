@@ -1,14 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="SDLTests.cpp">
-      <Filter>LibsTests\Public</Filter>
-    </ClCompile>
     <ClCompile Include="Ligma.cpp">
-      <Filter>Core\Public</Filter>
+      <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLTests.cpp">
+      <Filter>LibsTests\Private</Filter>
     </ClCompile>
     <ClCompile Include="RaylibTests.cpp">
-      <Filter>LibsTests\Public</Filter>
+      <Filter>LibsTests\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="RaylibSprite.cpp">
+      <Filter>Sprite\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLSprite.cpp">
+      <Filter>Sprite\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Sprite\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="RaylibWindow.cpp">
+      <Filter>Window\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLWindow.cpp">
+      <Filter>Window\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Window\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -30,13 +48,49 @@
     <Filter Include="Core\Public">
       <UniqueIdentifier>{09642493-fe62-4da8-85ea-3407585920b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{106e8c0b-25fd-489b-811e-c2fa66171572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{341964a1-1f7a-4ae8-a96e-f9a068a74de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window\Public">
+      <UniqueIdentifier>{0a187529-e009-4ef1-a914-7ed50d40d62e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window\Private">
+      <UniqueIdentifier>{cab7329e-c71a-40d0-b56e-d2657f3b9142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite\Public">
+      <UniqueIdentifier>{79f71084-021c-46fc-bc7f-f20c7023884f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite\Private">
+      <UniqueIdentifier>{e68de850-6cac-4e33-8369-946591db233e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDLTests.h">
-      <Filter>LibsTests\Private</Filter>
-    </ClInclude>
     <ClInclude Include="RaylibTests.h">
-      <Filter>LibsTests\Private</Filter>
+      <Filter>LibsTests\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLTests.h">
+      <Filter>LibsTests\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RaylibSprite.h">
+      <Filter>Sprite\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Sprite\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLSprite.h">
+      <Filter>Sprite\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RaylibWindow.h">
+      <Filter>Window\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLWindow.h">
+      <Filter>Window\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Window\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

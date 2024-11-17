@@ -141,12 +141,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ligma.cpp" />
+    <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibTests.cpp" />
+    <ClCompile Include="RaylibWindow.cpp" />
+    <ClCompile Include="SDLSprite.cpp" />
     <ClCompile Include="SDLTests.cpp" />
+    <ClCompile Include="SDLWindow.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibTests.h" />
+    <ClInclude Include="RaylibWindow.h" />
+    <ClInclude Include="SDLSprite.h" />
     <ClInclude Include="SDLTests.h" />
+    <ClInclude Include="SDLWindow.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
