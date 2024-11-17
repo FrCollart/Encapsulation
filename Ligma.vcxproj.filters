@@ -1,22 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <ClCompile Include="SDLTests.cpp">
+      <Filter>LibsTests\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="Ligma.cpp">
+      <Filter>Core\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="RaylibTests.cpp">
+      <Filter>LibsTests\Public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="LibsTests">
+      <UniqueIdentifier>{ca673e7d-9561-42a1-a7b8-dea228fbd175}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="LibsTests\Private">
+      <UniqueIdentifier>{27bd5f31-a546-402d-8468-e13a753940af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="LibsTests\Public">
+      <UniqueIdentifier>{426d4b9b-0173-42df-85a7-3cc18a5eb7db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{f0ed4c1b-92e8-48e2-88b9-87e54d204dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Private">
+      <UniqueIdentifier>{b2f29cef-7037-4a92-920d-496775a0c74b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Public">
+      <UniqueIdentifier>{09642493-fe62-4da8-85ea-3407585920b7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ligma.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
+    <ClInclude Include="SDLTests.h">
+      <Filter>LibsTests\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="RaylibTests.h">
+      <Filter>LibsTests\Private</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
