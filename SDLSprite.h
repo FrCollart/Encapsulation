@@ -1,5 +1,8 @@
 #pragma once
-class SDLSprite
+#include "Sprite.h"
+
+class SDLSprite : public Sprite
 {
+
 };
 

@@ -1,5 +1,8 @@
 #pragma once
-class RaylibWindow
+#include "Window.h"
+
+class RaylibWindow : public Window
 {
+
 };
 
