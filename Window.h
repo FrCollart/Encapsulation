@@ -5,11 +5,11 @@ class Window
 public:
 	virtual ~Window() = default;
 
-	virtual void initialize() = 0;
-    virtual void createWindow(int width, int height, const char* title) = 0;
-    virtual bool isOpen() const = 0;
-    virtual void clear() = 0;
-    virtual void drawSprite() = 0;
-    virtual void cleanup() = 0;
+	virtual void Initialize() = 0;
+    virtual void CreateWindow(int width, int height, const char* title) = 0;
+    virtual bool IsOpen() const = 0;
+    virtual void Clear() = 0;
+    virtual void DrawSprite() = 0;
+    virtual void Cleanup() = 0;
 };
 
