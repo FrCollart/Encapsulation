@@ -28,7 +28,6 @@ int SDLTests::TestSDL()
         return -1;
     }
 
-    // Event loop to keep the window open
     bool isRunning = true;
     SDL_Event event;
     while (isRunning) {
@@ -43,7 +42,6 @@ int SDLTests::TestSDL()
         SDL_RenderPresent(renderer);
     }
 
-    // Cleanup
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

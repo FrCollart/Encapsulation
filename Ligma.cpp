@@ -1,7 +1,7 @@
+#include <cstdlib>
+
 #include "SDLTests.h"
 #include "RaylibTests.h"
-
-#include <cstdlib>
 
 int main(int argc, char* argv[])
 {
