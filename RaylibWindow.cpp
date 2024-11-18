@@ -1,10 +1,11 @@
 #include "RaylibWindow.h"
 #include "raylib.h"
 #include "Sprite.h"
+#include "App.h"
 
 void RaylibWindow::Initialize()
 {
-
+	// No need to initialize in Raylib
 }
 
 void RaylibWindow::CreateWindow(int width, int height, const char* title)
@@ -20,16 +21,25 @@ bool RaylibWindow::IsOpen() const
 void RaylibWindow::Clear()
 {
 	ClearBackground(WHITE);
+	
 }
 
-void RaylibWindow::Draw(const std::vector<const class Sprite*>& spritesList)
+void RaylibWindow::BeginDraw()
 {
 	BeginDrawing();
-	for (const auto& sprite : spritesList)
+}
+
+void RaylibWindow::EndDraw()
+{
+	EndDrawing();
+}
+
+void RaylibWindow::InternalDraw()
+{
+	for (const auto& sprite : App::GetInstance()->GetSprites())
 	{
 		InternalDrawSprite(*sprite);
 	}
-	EndDrawing();
 }
 
 void RaylibWindow::InternalDrawSprite(const Sprite& sprite)

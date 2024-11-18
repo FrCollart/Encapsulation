@@ -3,6 +3,8 @@
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
 
+App* App::instance = nullptr;
+
 App::App()
 {
 }
@@ -12,7 +14,7 @@ void App::ChangeState(RunState inState)
 	switch (state)
 	{
 	case Close:
-		break;
+		return;
 	case SDLRun:
 		delete currentWindow;
 		break;
@@ -20,14 +22,18 @@ void App::ChangeState(RunState inState)
 		delete currentWindow;
 		break;
 	case WaitForLib:
+		if (inState == Close) return;
+
 		if (inState == SDLRun)
 		{
 			currentWindow = new SDLWindow();
 		}
-		else if (inState == RunState::RaylibRun)
+		else if (inState == RaylibRun)
 		{
 			currentWindow = new RaylibWindow();
 		}
+		currentWindow->Initialize();
+		currentWindow->CreateWindow(windowWidth, windowHeight, windowTitle);
 		break;
 	}
 	state = inState;
@@ -35,9 +41,12 @@ void App::ChangeState(RunState inState)
 
 void App::Run()
 {
-	while (state != Close)
+	// TEST ONLY
+	ChangeState(RunState::SDLRun);
+
+	while (currentWindow->IsOpen())
 	{
-		currentWindow->Draw(displayedSprites);
+		currentWindow->Draw();
 	}
 }
 

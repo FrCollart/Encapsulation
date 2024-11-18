@@ -9,7 +9,9 @@ public:
     void CreateWindow(int width, int height, const char* title) override;
     bool IsOpen() const override;
     void Clear() override;
-    void Draw(const std::vector<const class Sprite*>& spritesList) override;
+    void BeginDraw() override;
+    void EndDraw() override;
+    void InternalDraw() override;
     void Cleanup() override;
 
 private:
@@ -18,5 +20,6 @@ private:
 private:
     class SDL_Window* window = nullptr;
     class SDL_Renderer* renderer = nullptr;
+    bool isRunning = true;
 };
 

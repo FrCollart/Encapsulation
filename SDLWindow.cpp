@@ -1,6 +1,7 @@
 #include "SDLWindow.h"
 #include "SDL.h"
 #include "Sprite.h"
+#include "App.h"
 
 void SDLWindow::Initialize()
 {
@@ -31,24 +32,39 @@ void SDLWindow::CreateWindow(int width, int height, const char* title)
 
 bool SDLWindow::IsOpen() const
 {
-	return (renderer != nullptr);
+	return isRunning;
 }
 
 void SDLWindow::Clear()
 {
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White background
 	SDL_RenderClear(renderer);
 	SDL_RenderPresent(renderer);
 }
 
-void SDLWindow::Draw(const std::vector<const class Sprite*>& spritesList)
+void SDLWindow::BeginDraw()
 {
-	for (const auto& sprite : spritesList)
+	SDL_Event event;
+	while (SDL_PollEvent(&event))
+	{
+		if (event.type == SDL_QUIT)
+		{
+			isRunning = false;
+		}
+	}
+}
+
+void SDLWindow::EndDraw()
+{
+	SDL_RenderPresent(renderer);
+}
+
+void SDLWindow::InternalDraw()
+{
+	for (const auto& sprite : App::GetInstance()->GetSprites())
 	{
 		InternalDrawSprite(*sprite);
 	}
-
-	SDL_RenderPresent(renderer);
 }
 
 void SDLWindow::InternalDrawSprite(const Sprite& sprite)
