@@ -1,5 +1,4 @@
 #include "App.h"
-#include "WindowManager.h"
 #include "Window.h"
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
