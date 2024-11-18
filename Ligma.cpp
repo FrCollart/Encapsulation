@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 		return EXIT_FAILURE;
 	}
 	return EXIT_SUCCESS;
-	*/	
+	*/
 
 	// Uncomment this to test Raylib importation
 	// It should display a Raylib Window with a white background.
