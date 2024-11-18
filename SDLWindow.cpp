@@ -42,11 +42,11 @@ void SDLWindow::Draw(const std::vector<class Sprite>& spritesList)
 {
 	for (auto& sprite : spritesList)
 	{
-		DrawSprite(sprite);
+		InternalDrawSprite(sprite);
 	}
 }
 
-void SDLWindow::DrawSprite(const class Sprite& sprite)
+void SDLWindow::InternalDrawSprite(const Sprite& sprite)
 {
 	SDL_Rect destRect;
 	destRect.x = sprite.GetX();
@@ -54,10 +54,9 @@ void SDLWindow::DrawSprite(const class Sprite& sprite)
 	destRect.w = sprite.GetWidth();
 	destRect.h = sprite.GetHeight();
 
-	// Reconstruct Texture from data
+	// Interprete the sprite data as a SDL texture
 	const void* pixels = sprite.GetData();
-	SDL_Texture* texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STATIC, sprite.GetWidth(), sprite.GetHeight());
-	SDL_UpdateTexture(texture, nullptr, pixels, sprite.GetWidth() * sizeof(Uint32));
+	SDL_Texture* texture = (SDL_Texture*)pixels;
 
 	// Draw
 	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
