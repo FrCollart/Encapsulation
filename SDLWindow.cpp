@@ -13,6 +13,7 @@ void SDLWindow::Initialize()
 void SDLWindow::CreateWindow(int width, int height, const char* title)
 {
 	window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+	
 	if (window == nullptr)
 	{
 		SDL_Log("Window could not be created! SDL_Error: %s", SDL_GetError());
@@ -24,6 +25,8 @@ void SDLWindow::CreateWindow(int width, int height, const char* title)
 		SDL_DestroyWindow(window);
 		SDL_Quit();
 	}
+
+	SDL_SetWindowTitle(window, title);
 }
 
 bool SDLWindow::IsOpen() const
@@ -55,8 +58,8 @@ void SDLWindow::InternalDrawSprite(const Sprite& sprite)
 	destRect.h = sprite.GetHeight();
 
 	// Interprete the sprite data as a SDL texture
-	const void* pixels = sprite.GetData();
-	SDL_Texture* texture = (SDL_Texture*)pixels;
+	const void* data = sprite.GetData();
+	SDL_Texture* texture = (SDL_Texture*)data;
 
 	// Draw
 	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
