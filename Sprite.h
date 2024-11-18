@@ -10,14 +10,15 @@ public:
     virtual ~Sprite() = default;
 
     virtual void LoadImage(const char* filepath) = 0;
-    virtual const void* GetData() const;
 
-    int GetX() const { return x; }
-    int GetY() const { return y; }
-    int GetWidth() const { return width; }
-    int GetHeight() const { return height; }
+    inline const void* GetData() const { return data; }
+    inline int GetX() const { return x; }
+    inline int GetY() const { return y; }
+    inline int GetWidth() const { return width; }
+    inline int GetHeight() const { return height; }
 
-    void SetPosition(int posX, int posY) {
+    void SetPosition(int posX, int posY)
+    {
         x = posX;
         y = posY;
     }
