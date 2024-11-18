@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Ligma.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibTests.cpp" />
@@ -148,10 +150,12 @@
     <ClCompile Include="SDLTests.cpp" />
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibTests.h" />
     <ClInclude Include="RaylibWindow.h" />
@@ -159,8 +163,8 @@
     <ClInclude Include="SDLTests.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
