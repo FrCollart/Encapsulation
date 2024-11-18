@@ -86,7 +86,8 @@ void SDLWindow::InternalDrawSprite(const Sprite& sprite)
 
 void SDLWindow::Cleanup()
 {
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
+	// If the user closes the window, we need to check if the renderer and window are valid before destroying them
+	if (renderer) SDL_DestroyRenderer(renderer);
+	if (window) SDL_DestroyWindow(window);
 	SDL_Quit();
 }

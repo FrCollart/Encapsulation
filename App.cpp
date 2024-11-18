@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
+#include <iostream>
 
 App* App::instance = nullptr;
 
@@ -28,6 +29,7 @@ void App::ChangeState(RunState inState)
 		{
 			currentWindow = new SDLWindow();
 		}
+
 		else if (inState == RaylibRun)
 		{
 			currentWindow = new RaylibWindow();
@@ -41,9 +43,36 @@ void App::ChangeState(RunState inState)
 
 void App::Run()
 {
-	// TEST ONLY
-	ChangeState(RunState::SDLRun);
+	while (1)
+	{
+		std::cout << "Enter 1 for SDL, 2 for Raylib, 0 to close\n";
+		char input;
+		std::cin >> input;
 
+		switch (input)
+		{
+		case '1':
+			ChangeState(RunState::SDLRun);
+			break;
+		case '2':
+			ChangeState(RunState::RaylibRun);
+			break;
+		case '0':
+			return;
+		default:
+			std::cout << "Invalid input\n";
+			continue;
+		}
+
+		RunWindow();
+
+		currentWindow->Cleanup();
+		ChangeState(WaitForLib);
+	}
+}
+
+void App::RunWindow()
+{
 	while (currentWindow->IsOpen())
 	{
 		currentWindow->Draw();

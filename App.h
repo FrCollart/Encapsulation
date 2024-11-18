@@ -31,6 +31,10 @@ public:
 	void Run();
 
 private:
+
+	void RunWindow();
+
+private:
 	static App* instance;
 
 	RunState state = WaitForLib;
