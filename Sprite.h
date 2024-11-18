@@ -10,7 +10,7 @@ public:
     virtual ~Sprite() = default;
 
     virtual void LoadImage(const char* filepath) = 0;
-    virtual const void* GetData() const = 0;
+    virtual const void* GetData() const;
 
     int GetX() const { return x; }
     int GetY() const { return y; }
@@ -27,5 +27,6 @@ protected:
     int y;
     int width;
     int height;
+    void* data = nullptr;
 };
 

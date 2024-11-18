@@ -4,7 +4,6 @@
 class SDLSprite : public Sprite
 {
 public:
-	virtual void LoadImage(const char* filepath) override;
-	virtual const void* GetData() const override;
+	void LoadImage(const char* filepath) override;
 };
 
