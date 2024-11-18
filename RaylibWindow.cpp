@@ -22,12 +22,12 @@ void RaylibWindow::Clear()
 	ClearBackground(WHITE);
 }
 
-void RaylibWindow::Draw(const std::vector<class Sprite>& spritesList)
+void RaylibWindow::Draw(const std::vector<const class Sprite*>& spritesList)
 {
 	BeginDrawing();
 	for (const auto& sprite : spritesList)
 	{
-		InternalDrawSprite(sprite);
+		InternalDrawSprite(*sprite);
 	}
 	EndDrawing();
 }

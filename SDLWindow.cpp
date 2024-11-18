@@ -41,11 +41,11 @@ void SDLWindow::Clear()
 	SDL_RenderPresent(renderer);
 }
 
-void SDLWindow::Draw(const std::vector<class Sprite>& spritesList)
+void SDLWindow::Draw(const std::vector<const class Sprite*>& spritesList)
 {
-	for (auto& sprite : spritesList)
+	for (const auto& sprite : spritesList)
 	{
-		InternalDrawSprite(sprite);
+		InternalDrawSprite(*sprite);
 	}
 }
 
