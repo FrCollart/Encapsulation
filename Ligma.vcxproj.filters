@@ -28,6 +28,15 @@
     <ClCompile Include="Window.cpp">
       <Filter>Window\Private</Filter>
     </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="LibsTests">
@@ -91,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>Window\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>Core\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
