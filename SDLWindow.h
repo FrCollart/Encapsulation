@@ -10,8 +10,10 @@ public:
     virtual bool IsOpen() const override;
     virtual void Clear() override;
     virtual void Draw(const std::vector<class Sprite>& spritesList) override;
-    virtual void DrawSprite(const class Sprite& sprite) override;
     virtual void Cleanup() override;
+
+private:
+    void InternalDrawSprite(const class Sprite& sprite);
 
 private:
     class SDL_Window* window = nullptr;

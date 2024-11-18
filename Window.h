@@ -11,7 +11,6 @@ public:
     virtual bool IsOpen() const = 0;
     virtual void Clear() = 0;
     virtual void Draw(const std::vector<class Sprite>& spritesList) = 0;
-    virtual void DrawSprite(const class Sprite& sprite) = 0;
     virtual void Cleanup() = 0;
 };
 
