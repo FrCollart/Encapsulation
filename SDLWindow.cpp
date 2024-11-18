@@ -47,6 +47,8 @@ void SDLWindow::Draw(const std::vector<const class Sprite*>& spritesList)
 	{
 		InternalDrawSprite(*sprite);
 	}
+
+	SDL_RenderPresent(renderer);
 }
 
 void SDLWindow::InternalDrawSprite(const Sprite& sprite)
@@ -63,6 +65,7 @@ void SDLWindow::InternalDrawSprite(const Sprite& sprite)
 
 	// Draw
 	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
+	
 }
 
 void SDLWindow::Cleanup()
