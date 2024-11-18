@@ -13,7 +13,7 @@ class App
 {
 public:
 	App();
-	void ChangeLib(RunState lib);
+	void ChangeState(RunState inState);
 	void AddSprite(class Sprite* toAdd);
 	std::vector<const class Sprite*> GetSprites() { return displayedSprites; }
 
@@ -21,9 +21,12 @@ private:
 
 	void Run();
 
-	RunState state = WaitForLib;
-	std::vector<const class Sprite*> displayedSprites;
+private:
 
+	RunState state = WaitForLib;
+
+	class Window* currentWindow = nullptr;	
+	std::vector<const class Sprite*> displayedSprites;
 	class InputManager* inputManager = nullptr;
-	class WindowManager* windowManager = nullptr;
+	
 };
