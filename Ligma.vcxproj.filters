@@ -46,7 +46,9 @@
     <ClCompile Include="TimeModule.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
-    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="LibsTests">
@@ -138,8 +140,10 @@
     <ClInclude Include="TimeModule.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
-    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="GameConsts.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
   </ItemGroup>

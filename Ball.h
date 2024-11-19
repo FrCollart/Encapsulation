@@ -15,8 +15,6 @@ public:
 	void SetVelocityY(float y) { velocityY = y; }
 	void SetAccelerationX(float x) { accelerationX = x; }
 	void SetAccelerationY(float y) { accelerationY = y; }
-	void AddAccelerationX(float x) { accelerationX += x; }
-	void AddAccelerationY(float y) { accelerationY += y; }
 
 	float GetRadius() const { return radius; }
 	float GetVelocityX() const { return velocityX; }

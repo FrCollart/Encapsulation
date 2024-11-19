@@ -37,8 +37,8 @@ void BallsManager::Update(float deltaTime)
 	}
 	for (Ball* ball : balls)
 	{
-		ball->AddAccelerationX(ball->GetVelocityX() * -1 * .8f * deltaTime);
-		ball->AddAccelerationY(ball->GetVelocityY() * -1 * .8f * deltaTime);
+		ball->SetAccelerationX(ball->GetVelocityX() * -1 * .8f );
+		ball->SetAccelerationY(ball->GetVelocityY() * -1 * .8f );
 		ball->SetVelocityX(ball->GetVelocityX() + (ball->GetAccelerationX() * deltaTime));
 		ball->SetVelocityY(ball->GetVelocityY() + (ball->GetAccelerationY() * deltaTime));
 		ball->SetX(ball->GetX() + (ball->GetVelocityX() * deltaTime));
