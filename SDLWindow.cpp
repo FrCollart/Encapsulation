@@ -42,7 +42,6 @@ void SDLWindow::Clear()
 {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White background
 	SDL_RenderClear(renderer);
-	SDL_RenderPresent(renderer);
 }
 
 void SDLWindow::BeginDraw()
