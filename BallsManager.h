@@ -6,7 +6,7 @@
 class BallsManager
 {
 public:
-	
+
 	void Initialize();
 	void Update(float deltaTime);
 	void CleanUp();
@@ -21,4 +21,6 @@ private:
 	std::vector<class Ball*> balls;
 	class QuadTree* quadTree;
 };
+
+constexpr float FRICTION_FACTOR = 0.8f;
 
