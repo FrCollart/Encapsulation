@@ -20,16 +20,16 @@ public:
     void InternalDrawFPS() override;
     void Cleanup() override;
 
-    static class SDL_Renderer* GetRenderer() { return renderer; }
+    static struct SDL_Renderer* GetRenderer() { return renderer; }
 
 private:
     void InternalDrawSprite(const class Sprite& sprite, int x, int y);
 
 public:
-    static class SDL_Renderer* renderer;
+    static struct SDL_Renderer* renderer;
 
 private:
-    class SDL_Window* window = nullptr;
+    struct SDL_Window* window = nullptr;
     bool isRunning = true;
     TTF_Font* font = nullptr;
 };
