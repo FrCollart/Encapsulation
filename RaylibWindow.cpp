@@ -1,7 +1,8 @@
 #include "RaylibWindow.h"
 #include "raylib.h"
 #include "Sprite.h"
-#include "App.h"
+#include "BallsManager.h"
+#include "Ball.h"
 
 void RaylibWindow::Initialize()
 {
@@ -36,9 +37,9 @@ void RaylibWindow::EndDraw()
 
 void RaylibWindow::InternalDraw()
 {
-	for (const auto& sprite : App::GetInstance()->GetSprites())
+	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
-		InternalDrawSprite(*sprite);
+		InternalDrawSprite(*ball->GetSprite());
 	}
 }
 

@@ -1,7 +1,9 @@
 #include "SDLWindow.h"
 #include "SDL.h"
 #include "Sprite.h"
-#include "App.h"
+#include "BallsManager.h"
+#include "Ball.h"
+
 
 void SDLWindow::Initialize()
 {
@@ -61,9 +63,9 @@ void SDLWindow::EndDraw()
 
 void SDLWindow::InternalDraw()
 {
-	for (const auto& sprite : App::GetInstance()->GetSprites())
+	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
-		InternalDrawSprite(*sprite);
+		InternalDrawSprite(*ball->GetSprite());
 	}
 }
 

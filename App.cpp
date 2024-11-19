@@ -2,12 +2,12 @@
 #include "Window.h"
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
+#include "BallsManager.h"
 #include <iostream>
-
-App* App::instance = nullptr;
 
 App::App()
 {
+	ballsManager = BallsManager::GetInstance();
 }
 
 void App::ChangeState(RunState inState)
@@ -60,7 +60,7 @@ void App::Run()
 		case '0':
 			return;
 		default:
-			std::cout << "Invalid input\n";
+			std::cout << "Invalid input, Try again\n";
 			continue;
 		}
 
@@ -77,9 +77,4 @@ void App::RunWindow()
 	{
 		currentWindow->Draw();
 	}
-}
-
-void App::AddSprite(Sprite* toAdd)
-{
-	displayedSprites.push_back(toAdd);
 }

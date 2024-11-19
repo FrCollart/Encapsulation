@@ -16,18 +16,7 @@ public:
 	App();
 	~App() {}
 
-	static App* GetInstance()
-	{
-		if (instance == nullptr)
-		{
-			instance = new App();
-		}
-		return instance;
-	}
-
 	void ChangeState(RunState inState);
-	void AddSprite(class Sprite* toAdd);
-	std::vector<const class Sprite*> GetSprites() { return displayedSprites; }
 	void Run();
 
 private:
@@ -35,12 +24,11 @@ private:
 	void RunWindow();
 
 private:
-	static App* instance;
 
 	RunState state = WaitForLib;
 
 	class Window* currentWindow = nullptr;	
-	std::vector<const class Sprite*> displayedSprites;
+	class BallsManager* ballsManager = nullptr;
 	class InputManager* inputManager = nullptr;	
 };
 
