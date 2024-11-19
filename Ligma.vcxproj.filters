@@ -43,6 +43,9 @@
     <ClCompile Include="SpritesLoader.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
+    <ClCompile Include="TimeModule.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="LibsTests">
@@ -129,6 +132,9 @@
       <Filter>Core\Public</Filter>
     </ClInclude>
     <ClInclude Include="SpritesLoader.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeModule.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
   </ItemGroup>

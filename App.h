@@ -31,8 +31,11 @@ private:
 	class Window* currentWindow = nullptr;	
 	class BallsManager* ballsManager = nullptr;
 	class InputManager* inputManager = nullptr;	
+	class TimeModule* timeModule = nullptr;
 };
 
 constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
 constexpr const char* WINDOW_TITLE = "Ligma";
+constexpr const char* TEXTURE_PATH = "Textures/ball.png";
+constexpr const char* FONT_PATH = "Fonts/Roboto-Black.ttf";

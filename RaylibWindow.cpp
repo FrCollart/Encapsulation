@@ -1,17 +1,21 @@
 #include "RaylibWindow.h"
-#include "raylib.h"
 #include "Sprite.h"
 #include "BallsManager.h"
+#include "TimeModule.h"
 #include "Ball.h"
+#include "App.h"
+#include <string>
 
 void RaylibWindow::Initialize()
 {
-	// No need to initialize in Raylib
+	Window::Initialize();
+	// No need to initialize Raylib 
 }
 
 void RaylibWindow::CreateWindow(int width, int height, const char* title)
 {
 	InitWindow(width, height, title);
+	font = LoadFont(FONT_PATH);
 }
 
 bool RaylibWindow::IsOpen() const
@@ -43,6 +47,16 @@ void RaylibWindow::InternalDraw()
 	}
 }
 
+void RaylibWindow::InternalDrawFPS()
+{
+	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetFPS()));
+
+	Vector2 textSize = MeasureTextEx(font, fpsText.c_str(), 20, 1.0f);
+	Vector2 position = { WINDOW_WIDTH - textSize.x - 10, 10 };
+
+	DrawTextEx(font, fpsText.c_str(), position, 20, 1.0f, BLACK);
+}
+
 void RaylibWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
 {
 	const void* data = sprite.GetData();
@@ -53,5 +67,6 @@ void RaylibWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
 
 void RaylibWindow::Cleanup()
 {
+	UnloadFont(font);
 	CloseWindow();
 }

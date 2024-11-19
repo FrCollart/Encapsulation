@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+#include "raylib.h"
 
 class RaylibWindow : public Window
 {
@@ -11,10 +12,13 @@ public:
     void BeginDraw() override;
     void EndDraw() override;
     void InternalDraw() override;
+    void InternalDrawFPS() override;
     void Cleanup() override;
 
 private:
     void InternalDrawSprite(const class Sprite& sprite, int x, int y);
 
+private:
+    Font font;
 };
 

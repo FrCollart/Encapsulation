@@ -4,11 +4,13 @@
 #include "RaylibWindow.h"
 #include "BallsManager.h"
 #include "SpritesLoader.h"
+#include "TimeModule.h"
 #include <iostream>
 
 App::App()
 {
 	ballsManager = BallsManager::GetInstance();
+	timeModule = TimeModule::GetInstance();
 }
 
 void App::ChangeState(RunState inState)
@@ -93,8 +95,14 @@ void App::Run()
 
 void App::RunWindow()
 {
+	timeModule->Update();
 	while (currentWindow->IsOpen())
 	{
+		timeModule->Update();
+		float deltaTime = timeModule->GetDeltaTime();
+
+		// Update and draw frame
+		ballsManager->Update(deltaTime);
 		currentWindow->Draw();
 	}
 }

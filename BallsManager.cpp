@@ -17,22 +17,22 @@ void BallsManager::Initialize()
 
 void BallsManager::Update(float deltaTime)
 {
-	Rectangle* rect = new Rectangle(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
-	delete quadTree;
-	quadTree = new QuadTree(rect, 4);
-	for (Ball* ball : balls)
-	{
-		quadTree->InsertDisplayable(ball);
-	}
+	//Rectangle* rect = new Rectangle(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
+	//delete quadTree;
+	//quadTree = new QuadTree(rect, 4);
+	//for (Ball* ball : balls)
+	//{
+	//	quadTree->InsertDisplayable(ball);
+	//}
 
-	for (Ball* ball : balls)
-	{
-		Rectangle* ballDetection = new Rectangle(ball->GetX(), ball->GetY(), ball->GetRadius() * 2, ball->GetRadius() * 2);
-		std::vector<DisplayableObject*> others = quadTree->Query(ballDetection);
-		for (DisplayableObject* displayable : others)
-		{
-		}
-	}
+	//for (Ball* ball : balls)
+	//{
+	//	Rectangle* ballDetection = new Rectangle(ball->GetX(), ball->GetY(), ball->GetRadius() * 2, ball->GetRadius() * 2);
+	//	std::vector<DisplayableObject*> others = quadTree->Query(ballDetection);
+	//	for (DisplayableObject* displayable : others)
+	//	{
+	//	}
+	//}
 }
 
 BallsManager* BallsManager::GetInstance()

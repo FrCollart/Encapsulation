@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include "SDLSprite.h"
 #include "RaylibSprite.h"
+#include "App.h"
 
 std::vector<Sprite*> SpritesLoader::sprites;
 
@@ -9,7 +10,7 @@ void SpritesLoader::SDLLoadSprites()
 {
 	UnloadSprites();
 	SDLSprite* sprite = new SDLSprite();
-	sprite->LoadImage("Textures/ball.png");
+	sprite->LoadImage(TEXTURE_PATH);
 	sprites.push_back(sprite);
 }
 
@@ -17,7 +18,7 @@ void SpritesLoader::RaylibLoadSprites()
 {
 	UnloadSprites();
 	RaylibSprite* sprite = new RaylibSprite();
-	sprite->LoadImage("Textures/ball.png");
+	sprite->LoadImage(TEXTURE_PATH);
 	sprites.push_back(sprite);
 }
 

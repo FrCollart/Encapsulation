@@ -1,4 +1,10 @@
 #include "Window.h"
+#include "TimeModule.h"
+
+void Window::Initialize()
+{
+	timeModule = TimeModule::GetInstance();
+}
 
 void Window::Draw()
 {
@@ -10,6 +16,9 @@ void Window::Draw()
 
 	// Draw all elements
 	InternalDraw();
+
+	// Display FPS
+	InternalDrawFPS();
 
 	// Finalize drawing
 	EndDraw();

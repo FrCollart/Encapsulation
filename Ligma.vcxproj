@@ -154,6 +154,7 @@
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpritesLoader.cpp" />
+    <ClCompile Include="TimeModule.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpritesLoader.h" />
+    <ClInclude Include="TimeModule.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

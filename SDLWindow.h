@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+#include <SDL_ttf.h>
 
 class SDLWindow : public Window
 {
@@ -12,6 +13,7 @@ public:
     void BeginDraw() override;
     void EndDraw() override;
     void InternalDraw() override;
+    void InternalDrawFPS() override;
     void Cleanup() override;
 
     static class SDL_Renderer* GetRenderer() { return renderer; }
@@ -25,5 +27,6 @@ public:
 private:
     class SDL_Window* window = nullptr;
     bool isRunning = true;
+    TTF_Font* font = nullptr;
 };
 
