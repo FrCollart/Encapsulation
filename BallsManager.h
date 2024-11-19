@@ -5,7 +5,7 @@ class BallsManager
 {
 public:
 	void Initialize();
-	void Update();
+	void Update(float deltaTime);
 
 	static BallsManager* GetInstance();
 
