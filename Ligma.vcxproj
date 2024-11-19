@@ -145,6 +145,7 @@
     <ClCompile Include="BallsManager.cpp" />
     <ClCompile Include="DisplayableObject.cpp" />
     <ClCompile Include="Ligma.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibTests.cpp" />
     <ClCompile Include="RaylibWindow.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="BallsManager.h" />
     <ClInclude Include="DisplayableObject.h" />
+    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibTests.h" />
     <ClInclude Include="RaylibWindow.h" />

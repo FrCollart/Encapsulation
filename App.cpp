@@ -37,7 +37,7 @@ void App::ChangeState(RunState inState)
 		}
 
 		currentWindow->Initialize();
-		currentWindow->CreateWindow(windowWidth, windowHeight, windowTitle);
+		currentWindow->CreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
 		// Need SDL & Raylib Init here
 		if (inState == SDLRun)

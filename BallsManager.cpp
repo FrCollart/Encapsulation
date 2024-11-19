@@ -2,6 +2,8 @@
 #include "Ball.h"
 #include "Sprite.h"
 #include "SpritesLoader.h"
+#include "QuadTree.h"
+#include "App.h"
 
 BallsManager* BallsManager::instance = nullptr;
 
@@ -13,8 +15,28 @@ void BallsManager::Initialize()
 	balls.push_back(ball);
 }
 
+void BallsManager::Update(float deltaTime)
+{
+	Rectangle* rect = new Rectangle(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
+	delete quadTree;
+	quadTree = new QuadTree(rect, 4);
+	for (Ball* ball : balls)
+	{
+		quadTree->InsertDisplayable(ball);
+	}
+
+	for (Ball* ball : balls)
+	{
+		Rectangle* ballDetection = new Rectangle(ball->GetX(), ball->GetY(), ball->GetRadius() * 2, ball->GetRadius() * 2);
+		std::vector<DisplayableObject*> others = quadTree->Query(ballDetection);
+		for (DisplayableObject* displayable : others)
+		{
+		}
+	}
+}
+
 BallsManager* BallsManager::GetInstance()
 {
-    if (instance == nullptr) instance = new BallsManager();
+	if (instance == nullptr) instance = new BallsManager();
 	return instance;
 }
