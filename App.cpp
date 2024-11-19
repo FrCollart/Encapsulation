@@ -95,6 +95,7 @@ void App::RunWindow()
 {
 	while (currentWindow->IsOpen())
 	{
+		ballsManager->Update(1.f/30.f);
 		currentWindow->Draw();
 	}
 }
