@@ -13,6 +13,7 @@ void SDLSprite::LoadImage(const char* filepath)
     SDL_Renderer* renderer = SDLWindow::GetRenderer();
     if (!renderer) {
 		SDL_Log("Failed to get renderer: %s", SDL_GetError());
+        SDL_FreeSurface(surface);
 		return;
 	}
 
@@ -26,6 +27,7 @@ void SDLSprite::LoadImage(const char* filepath)
 
     // Cast the texture into a void* so it can be stored in the sprite
     data = texture;
+
 
     SDL_FreeSurface(surface);
 }

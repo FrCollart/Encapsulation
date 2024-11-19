@@ -10,17 +10,17 @@ void RaylibSprite::LoadImage(const char* filepath)
         return;
     }
 
-    Texture2D* texture = new Texture2D();
-    *texture = LoadTextureFromImage(image);
+    Texture2D texture = LoadTextureFromImage(image);
 
     UnloadImage(image);
 
-    if (texture->id == 0) {
+    if (texture.id == 0) {
         TraceLog(LOG_ERROR, "Failed to create texture from image: %s", filepath);
+        return;
     }
 
-    width = texture->width;
-    height = texture->height;
+    width = texture.width;
+    height = texture.height;
 
-    data = texture;
+    data = new Texture2D(texture);
 }
