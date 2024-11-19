@@ -1,10 +1,15 @@
+// Base class
 #include "RaylibWindow.h"
+
+// C++ dependencies
+#include <string>
+
+// Project dependencies
 #include "Sprite.h"
 #include "BallsManager.h"
 #include "TimeModule.h"
 #include "Ball.h"
 #include "GameConsts.h"
-#include <string>
 
 void RaylibWindow::Initialize()
 {

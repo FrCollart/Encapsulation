@@ -1,10 +1,15 @@
+// Base class
 #include "BallsManager.h"
+
+// C++ dependencies
+#include <cmath>
+
+// Project dependecies
 #include "Ball.h"
 #include "Sprite.h"
 #include "SpritesLoader.h"
 #include "QuadTree.h"
 #include "GameConsts.h"
-#include "cmath"
 
 BallsManager* BallsManager::instance = nullptr;
 

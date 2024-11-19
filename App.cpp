@@ -1,4 +1,10 @@
+// Base class
 #include "App.h"
+
+// C++ dependencies
+#include <iostream>
+
+// Project dependencies
 #include "Window.h"
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
@@ -6,7 +12,6 @@
 #include "SpritesLoader.h"
 #include "TimeModule.h"
 #include "GameConsts.h"
-#include <iostream>
 
 App::App()
 {

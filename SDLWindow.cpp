@@ -1,12 +1,18 @@
+// Base class
 #include "SDLWindow.h"
-#include "SDL.h"
+
+// C++ dependencies
+#include <string>
+
+// Project dependencies
 #include "Sprite.h"
 #include "BallsManager.h"
 #include "Ball.h"
 #include "TimeModule.h"
 #include "GameConsts.h"
-#include <string>
-#include <iostream>
+
+// External dependencies
+#include <SDL.h>
 
 SDL_Renderer* SDLWindow::renderer = nullptr;
 

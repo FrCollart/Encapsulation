@@ -1,4 +1,7 @@
+// Base Class
 #include "SpritesLoader.h"
+
+// Project dependencies
 #include "Sprite.h"
 #include "SDLSprite.h"
 #include "RaylibSprite.h"

@@ -1,5 +1,8 @@
 #pragma once
+
+// Abstract class
 #include "DisplayableObject.h"
+
 class Ball : public DisplayableObject
 {
 public:

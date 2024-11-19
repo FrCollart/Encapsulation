@@ -1,4 +1,7 @@
+// Base class
 #include "QuadTree.h"
+
+// Project dependencies
 #include "Ball.h"
 #include "Sprite.h"
 

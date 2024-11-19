@@ -1,4 +1,7 @@
+// Base class
 #include "RaylibSprite.h"
+
+// External dependencies
 #include "raylib.h"
 
 void RaylibSprite::LoadImage(const char* filepath)

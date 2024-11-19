@@ -1,5 +1,10 @@
+// Base class
 #include "SDLSprite.h"
+
+// Project dependencies
 #include "SDLWindow.h"
+
+// External dependencies
 #include <SDL_image.h>
 
 void SDLSprite::LoadImage(const char* filepath)

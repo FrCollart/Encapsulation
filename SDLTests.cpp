@@ -1,5 +1,8 @@
+// Base class
 #include "SDLTests.h"
-#include "SDL.h"
+
+// External dependencies
+#include <SDL.h>
 
 int SDLTests::TestSDL()
 {

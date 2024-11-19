@@ -1,5 +1,28 @@
+//-------------------------------------------------------//
+//		   	L I G M A   S O U R C E   F I L E	         //
+//-------------------------------------------------------//
+//														 //
+// Owners:												 //
+//	- François Collart									 //
+//  - Raphaël Mateescu									 //
+//														 //
+//-------------------------------------------------------//
+//														 //
+// Dependencies:										 //
+// - Raylib: https://www.raylib.com/                     //
+// - SDL: https://www.libsdl.org/                        //
+//                                                       //
+//-------------------------------------------------------//
+//                                                       //
+//                 All rights reserved.                  //
+//                                                       //
+//-------------------------------------------------------//
+
+
+// C++ dependencies
 #include <cstdlib>
 
+// Project dependencies
 #include "SDLTests.h"
 #include "RaylibTests.h"
 #include "App.h"

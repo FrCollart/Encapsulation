@@ -1,4 +1,6 @@
 #pragma once
+
+// C++ dependencies
 #include <vector>
 
 class SpritesLoader

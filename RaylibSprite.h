@@ -1,4 +1,6 @@
 #pragma once
+
+// Abstract class
 #include "Sprite.h"
 
 class RaylibSprite : public Sprite

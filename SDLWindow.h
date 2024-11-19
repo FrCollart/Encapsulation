@@ -1,5 +1,9 @@
 #pragma once
+
+// Abstract class
 #include "Window.h"
+
+// External Dependencies
 #include <SDL_ttf.h>
 
 class SDLWindow : public Window

@@ -1,6 +1,7 @@
 #pragma once
-#include <vector>
 
+// C++ dependencies
+#include <vector>
 
 class Rectangle
 {

@@ -1,5 +1,8 @@
+// Base Class
 #include "RaylibTests.h"
-#include "raylib.h"
+
+// External dependencies
+#include <raylib.h>
 
 int RaylibTests::TestRaylib()
 {

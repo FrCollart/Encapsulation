@@ -1,3 +1,4 @@
+// Base Class
 #include "TimeModule.h"
 
 TimeModule* TimeModule::instance = nullptr;

@@ -1,6 +1,10 @@
 #pragma once
+
+// Abstract Class
 #include "Window.h"
-#include "raylib.h"
+
+// External Dependencies
+#include <raylib.h>
 
 class RaylibWindow : public Window
 {

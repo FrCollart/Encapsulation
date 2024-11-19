@@ -1,4 +1,7 @@
+// Base Class
 #include "Window.h"
+
+// Project dependencies
 #include "TimeModule.h"
 
 void Window::Initialize()
