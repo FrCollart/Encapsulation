@@ -2,7 +2,7 @@
 #include "Sprite.h"
 #include "SDLSprite.h"
 #include "RaylibSprite.h"
-#include "App.h"
+#include "GameConsts.h"
 
 std::vector<Sprite*> SpritesLoader::sprites;
 

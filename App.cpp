@@ -5,6 +5,7 @@
 #include "BallsManager.h"
 #include "SpritesLoader.h"
 #include "TimeModule.h"
+#include "GameConsts.h"
 #include <iostream>
 
 App::App()

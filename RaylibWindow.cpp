@@ -3,7 +3,7 @@
 #include "BallsManager.h"
 #include "TimeModule.h"
 #include "Ball.h"
-#include "App.h"
+#include "GameConsts.h"
 #include <string>
 
 void RaylibWindow::Initialize()

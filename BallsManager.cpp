@@ -3,7 +3,7 @@
 #include "Sprite.h"
 #include "SpritesLoader.h"
 #include "QuadTree.h"
-#include "App.h"
+#include "GameConsts.h"
 #include "cmath"
 
 BallsManager* BallsManager::instance = nullptr;
