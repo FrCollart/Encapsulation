@@ -16,5 +16,6 @@ private:
 
 	static BallsManager* instance;
 	std::vector<class Ball*> balls;
+	class QuadTree* quadTree;
 };
 
