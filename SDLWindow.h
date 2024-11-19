@@ -14,12 +14,16 @@ public:
     void InternalDraw() override;
     void Cleanup() override;
 
+    static class SDL_Renderer* GetRenderer() { return renderer; }
+
 private:
-    void InternalDrawSprite(const class Sprite& sprite);
+    void InternalDrawSprite(const class Sprite& sprite, int x, int y);
+
+public:
+    static class SDL_Renderer* renderer;
 
 private:
     class SDL_Window* window = nullptr;
-    class SDL_Renderer* renderer = nullptr;
     bool isRunning = true;
 };
 

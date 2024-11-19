@@ -3,6 +3,7 @@
 #include "SDLWindow.h"
 #include "RaylibWindow.h"
 #include "BallsManager.h"
+#include "SpritesLoader.h"
 #include <iostream>
 
 App::App()
@@ -30,22 +31,41 @@ void App::ChangeState(RunState inState)
 			currentWindow = new SDLWindow();
 		}
 
-		else if (inState == RaylibRun)
+		if (inState == RaylibRun)
 		{
 			currentWindow = new RaylibWindow();
 		}
+
 		currentWindow->Initialize();
 		currentWindow->CreateWindow(windowWidth, windowHeight, windowTitle);
+
+		// Need SDL & Raylib Init here
+		if (inState == SDLRun)
+		{
+			SpritesLoader::SDLLoadSprites();
+		}
+
+		if (inState == RaylibRun)
+		{
+			SpritesLoader::RaylibLoadSprites();
+		}
+
+		LoadInitialConfiguation();
 		break;
 	}
 	state = inState;
+}
+
+void App::LoadInitialConfiguation()
+{
+	ballsManager->Initialize();
 }
 
 void App::Run()
 {
 	while (1)
 	{
-		std::cout << "Enter 1 for SDL, 2 for Raylib, 0 to close\n";
+		std::cout << "Enter 1 for SDL, 2 for Raylib, 0 to close" << std::endl;
 		char input;
 		std::cin >> input;
 
@@ -60,7 +80,7 @@ void App::Run()
 		case '0':
 			return;
 		default:
-			std::cout << "Invalid input, Try again\n";
+			std::cout << "Invalid input, Try again" << std::endl;
 			continue;
 		}
 

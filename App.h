@@ -17,6 +17,7 @@ public:
 	~App() {}
 
 	void ChangeState(RunState inState);
+	void LoadInitialConfiguation();
 	void Run();
 
 private:

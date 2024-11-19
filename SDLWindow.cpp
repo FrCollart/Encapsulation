@@ -4,6 +4,7 @@
 #include "BallsManager.h"
 #include "Ball.h"
 
+SDL_Renderer* SDLWindow::renderer = nullptr;
 
 void SDLWindow::Initialize()
 {
@@ -65,15 +66,15 @@ void SDLWindow::InternalDraw()
 {
 	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
-		InternalDrawSprite(*ball->GetSprite());
+		InternalDrawSprite(*ball->GetSprite(), (int)ball->GetX(), (int)ball->GetY());
 	}
 }
 
-void SDLWindow::InternalDrawSprite(const Sprite& sprite)
+void SDLWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
 {
-	SDL_Rect destRect;
-	destRect.x = sprite.GetX();
-	destRect.y = sprite.GetY();
+	SDL_Rect destRect = SDL_Rect();
+	destRect.x = x;
+	destRect.y = y;
 	destRect.w = sprite.GetWidth();
 	destRect.h = sprite.GetHeight();
 

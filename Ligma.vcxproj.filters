@@ -31,9 +31,6 @@
     <ClCompile Include="App.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Core\Private</Filter>
-    </ClCompile>
     <ClCompile Include="Ball.cpp">
       <Filter>Balls\Private</Filter>
     </ClCompile>
@@ -41,6 +38,9 @@
       <Filter>Balls\Private</Filter>
     </ClCompile>
     <ClCompile Include="DisplayableObject.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SpritesLoader.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,9 +119,6 @@
     <ClInclude Include="App.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Core\Public</Filter>
-    </ClInclude>
     <ClInclude Include="Ball.h">
       <Filter>Balls\Public</Filter>
     </ClInclude>
@@ -129,6 +126,9 @@
       <Filter>Balls\Public</Filter>
     </ClInclude>
     <ClInclude Include="DisplayableObject.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SpritesLoader.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
   </ItemGroup>

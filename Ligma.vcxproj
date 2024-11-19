@@ -144,7 +144,6 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="BallsManager.cpp" />
     <ClCompile Include="DisplayableObject.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Ligma.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibTests.cpp" />
@@ -153,6 +152,7 @@
     <ClCompile Include="SDLTests.cpp" />
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpritesLoader.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +160,6 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="BallsManager.h" />
     <ClInclude Include="DisplayableObject.h" />
-    <ClInclude Include="InputManager.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibTests.h" />
     <ClInclude Include="RaylibWindow.h" />
@@ -168,6 +167,7 @@
     <ClInclude Include="SDLTests.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpritesLoader.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

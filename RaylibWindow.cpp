@@ -39,16 +39,16 @@ void RaylibWindow::InternalDraw()
 {
 	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
-		InternalDrawSprite(*ball->GetSprite());
+		InternalDrawSprite(*ball->GetSprite(), (int)ball->GetX(), (int)ball->GetY());
 	}
 }
 
-void RaylibWindow::InternalDrawSprite(const Sprite& sprite)
+void RaylibWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
 {
 	const void* data = sprite.GetData();
 	Texture2D* texture = (Texture2D*)data;
 
-	DrawTexture(*texture, sprite.GetX(), sprite.GetY(), WHITE);
+	DrawTexture(*texture, x, y, WHITE);
 }
 
 void RaylibWindow::Cleanup()

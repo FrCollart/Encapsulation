@@ -4,6 +4,7 @@
 class BallsManager
 {
 public:
+	
 	void Initialize();
 	void Update(float deltaTime);
 

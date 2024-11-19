@@ -14,7 +14,7 @@ public:
     void Cleanup() override;
 
 private:
-    void InternalDrawSprite(const class Sprite& sprite);
+    void InternalDrawSprite(const class Sprite& sprite, int x, int y);
 
 };
 
