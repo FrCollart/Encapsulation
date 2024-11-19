@@ -15,14 +15,14 @@ class QuadTree
 {
 public:
 	QuadTree(Rectangle* rect, int capacity) : rect(rect), rectangleCapacity(capacity) {}
-	void InsertDisplayable(class DisplayableObject* toInsert);
+	void AddBall(class Ball* toInsert);
 	void Subdivide();
-	std::vector<class DisplayableObject*> Query(Rectangle* range);
+	std::vector<class Ball*> Query(Rectangle* range);
 
 private:
 	QuadTree* subdivisions[4] = {}; //NW NE SW SE
 	Rectangle* rect;
-	std::vector<class DisplayableObject*> objects;
+	std::vector<class Ball*> objects;
 	int rectangleCapacity;
 };
 

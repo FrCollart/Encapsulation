@@ -1,8 +1,8 @@
 #include "QuadTree.h"
-#include "DisplayableObject.h"
+#include "Ball.h"
 #include "Sprite.h"
 
-void QuadTree::InsertDisplayable(DisplayableObject* toInsert)
+void QuadTree::AddBall(Ball* toInsert)
 {
 	//if displayable pos is outside rect
 	float spriteWidth = toInsert->GetSprite()->GetHeight();
@@ -17,10 +17,10 @@ void QuadTree::InsertDisplayable(DisplayableObject* toInsert)
 	else if (!subdivisions[0])
 	{
 		Subdivide();
-	}
-	for (int i = 0; i < 4; i++)
-	{
-		subdivisions[i]->InsertDisplayable(toInsert);
+		for (int i = 0; i < 4; i++)
+		{
+			subdivisions[i]->AddBall(toInsert);
+		}
 	}
 }
 
@@ -40,16 +40,15 @@ void QuadTree::Subdivide()
 
 }
 
-std::vector<DisplayableObject*> QuadTree::Query(Rectangle* range)
+std::vector<Ball*> QuadTree::Query(Rectangle* range)
 {
-	std::vector<DisplayableObject*> found;
-	if (!rect->Intersect(range)) return found;
-
+	std::vector<Ball*> found;
+	
 	if (subdivisions[0])
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			std::vector<DisplayableObject*> toAdd = subdivisions[i]->Query(range);
+			std::vector<Ball*> toAdd = subdivisions[i]->Query(range);
 			found.insert(found.end(), toAdd.begin(), toAdd.end());
 		}
 	}
@@ -63,7 +62,7 @@ std::vector<DisplayableObject*> QuadTree::Query(Rectangle* range)
 			}
 		}
 	}
-	
+
 	return found;
 }
 
