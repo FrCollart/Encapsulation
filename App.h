@@ -33,6 +33,6 @@ private:
 	class InputManager* inputManager = nullptr;	
 };
 
-constexpr int windowWidth = 800;
-constexpr int windowHeight = 600;
-constexpr const char* windowTitle = "Ligma";
+constexpr int WINDOW_WIDTH = 800;
+constexpr int WINDOW_HEIGHT = 600;
+constexpr const char* WINDOW_TITLE = "Ligma";
