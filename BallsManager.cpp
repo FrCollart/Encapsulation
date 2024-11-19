@@ -52,6 +52,11 @@ void BallsManager::Update(float deltaTime)
 	}
 }
 
+void BallsManager::CleanUp()
+{
+	balls.clear();
+}
+
 BallsManager* BallsManager::GetInstance()
 {
 	if (instance == nullptr) instance = new BallsManager();

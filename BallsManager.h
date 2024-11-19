@@ -7,6 +7,7 @@ public:
 	
 	void Initialize();
 	void Update(float deltaTime);
+	void CleanUp();
 
 	static BallsManager* GetInstance();
 

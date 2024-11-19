@@ -89,6 +89,7 @@ void App::Run()
 		RunWindow();
 
 		currentWindow->Cleanup();
+		ballsManager->CleanUp();
 		ChangeState(WaitForLib);
 	}
 }
