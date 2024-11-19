@@ -34,6 +34,15 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Balls\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="BallsManager.cpp">
+      <Filter>Balls\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayableObject.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="LibsTests">
@@ -72,6 +81,15 @@
     <Filter Include="Sprite\Private">
       <UniqueIdentifier>{e68de850-6cac-4e33-8369-946591db233e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Balls">
+      <UniqueIdentifier>{c06b8806-ad99-4156-8578-fd7ef39e1eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Balls\Private">
+      <UniqueIdentifier>{ed031b8b-d5b1-44f4-be6f-1ee272adf7e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Balls\Public">
+      <UniqueIdentifier>{14a298f6-b391-408f-be9b-bdfc4a58d1d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RaylibTests.h">
@@ -102,6 +120,15 @@
       <Filter>Core\Public</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Balls\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="BallsManager.h">
+      <Filter>Balls\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayableObject.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
   </ItemGroup>

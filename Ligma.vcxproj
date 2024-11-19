@@ -141,6 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="BallsManager.cpp" />
+    <ClCompile Include="DisplayableObject.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Ligma.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
@@ -154,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="BallsManager.h" />
+    <ClInclude Include="DisplayableObject.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibTests.h" />
