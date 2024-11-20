@@ -21,8 +21,9 @@ void SpritesLoader::SDLLoadSprites()
 	whiteBallSprite->LoadImage(WHITE_BALL_TEXTURE_PATH, BALL_RADIUS * 2, BALL_RADIUS * 2);
 	sprites.push_back(whiteBallSprite);
 
+
 	// Numbered balls
-	for (int ballNumber = 1; ballNumber < 16; ballNumber++)
+	for (int ballNumber = 1; ballNumber < 4; ballNumber++)
 	{
 		SDLSprite* numberedBallSprite = new SDLSprite();
 		std::string path = std::string(BALL_TEXTURE_PATH) + std::to_string(ballNumber) + ".png";
@@ -46,7 +47,7 @@ void SpritesLoader::RaylibLoadSprites()
 	sprites.push_back(sprite);
 
 	// Numbered balls
-	for (int ballNumber = 1; ballNumber < 16; ballNumber++)
+	for (int ballNumber = 1; ballNumber < 4; ballNumber++)
 	{
 		RaylibSprite* sprite = new RaylibSprite();
 		std::string path = std::string(BALL_TEXTURE_PATH) + std::to_string(ballNumber) + ".png";

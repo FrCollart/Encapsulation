@@ -10,6 +10,7 @@ public:
 	void Initialize();
 	void Update(float deltaTime);
 	void CleanUp();
+	void SpawnBalls();
 
 	static BallsManager* GetInstance();
 
