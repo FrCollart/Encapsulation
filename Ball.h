@@ -2,6 +2,7 @@
 
 // Abstract class
 #include "DisplayableObject.h"
+#include "GameConsts.h"
 
 class Ball : public DisplayableObject
 {
@@ -12,7 +13,7 @@ public:
 	void SetY(float y) { this->y = y; }
 	void SetOldX(float x) { this->oldX = x; }
 	void SetOldY(float y) { this->oldY = y; }
-	void SetRadius(float radius) { radius = radius; }
+	void SetRadius(float radius) { this->radius = radius; }
 	void SetVelocityX(float x) { velocityX = x; }
 	void SetVelocityY(float y) { velocityY = y; }
 	void SetAccelerationX(float x) { accelerationX = x; }
