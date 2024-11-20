@@ -1,6 +1,9 @@
 // Base Class
 #include "SpritesLoader.h"
 
+// C++ dependencies
+#include <string>
+
 // Project dependencies
 #include "Sprite.h"
 #include "SDLSprite.h"
@@ -13,7 +16,8 @@ void SpritesLoader::SDLLoadSprites()
 {
 	UnloadSprites();
 	SDLSprite* sprite = new SDLSprite();
-	sprite->LoadImage(TEXTURE_PATH);
+	std::string path = std::string(BALL_TEXTURE_PATH) + "10.png";
+	sprite->LoadImage(path.c_str(), BALL_RADIUS * 2, BALL_RADIUS * 2);
 	sprites.push_back(sprite);
 }
 
@@ -21,7 +25,8 @@ void SpritesLoader::RaylibLoadSprites()
 {
 	UnloadSprites();
 	RaylibSprite* sprite = new RaylibSprite();
-	sprite->LoadImage(TEXTURE_PATH);
+	std::string path = std::string(BALL_TEXTURE_PATH) + "10.png";
+	sprite->LoadImage(path.c_str(), BALL_RADIUS * 2, BALL_RADIUS * 2);
 	sprites.push_back(sprite);
 }
 

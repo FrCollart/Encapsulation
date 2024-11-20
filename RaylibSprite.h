@@ -6,6 +6,6 @@
 class RaylibSprite : public Sprite
 {
 public:
-	void LoadImage(const char* filepath) override;
+	void LoadImage(const char* filepath, int width, int height) override;
 };
 

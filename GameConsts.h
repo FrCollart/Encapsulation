@@ -1,7 +1,16 @@
 #pragma once
 
-constexpr int WINDOW_WIDTH = 800;
-constexpr int WINDOW_HEIGHT = 600;
+// Window settings
+constexpr int WINDOW_WIDTH = 915; // Proportions of a pool table
+constexpr int WINDOW_HEIGHT = 458;
 constexpr const char* WINDOW_TITLE = "Ligma";
-constexpr const char* TEXTURE_PATH = "Textures/PoolBall1.png";
+
+// Game Paths
+constexpr const char* TABLE_TEXTURE_PATH = "Textures/PoolTable.png";
+constexpr const char* WHITE_BALL_TEXTURE_PATH = "Textures/PoolBallWhite.png";
+constexpr const char* BALL_TEXTURE_PATH = "Textures/PoolBall";
+
 constexpr const char* FONT_PATH = "Fonts/Roboto-Black.ttf";
+
+// Game settings
+constexpr int BALL_RADIUS = 15; // Proportions of a pool ball

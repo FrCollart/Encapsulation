@@ -7,11 +7,10 @@ class Sprite {
 
 public:
     Sprite() : width(1), height(1){}
-    Sprite(int inX, int inY) : width(1), height(1){}
-    Sprite(int inX, int inY, int inWidth, int inHeight) : width(inWidth), height(inHeight){}
+    Sprite(int inWidth, int inHeight) : width(inWidth), height(inHeight){}
     virtual ~Sprite() = default;
 
-    virtual void LoadImage(const char* filepath) = 0;
+    virtual void LoadImage(const char* filepath, int width, int height) = 0;
 
     inline const void* GetData() const { return data; }
     inline int GetWidth() const { return width; }

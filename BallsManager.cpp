@@ -17,9 +17,9 @@ void BallsManager::Initialize()
 {
 	// TEST ONLY
 	Sprite* sprite = SpritesLoader::GetSprites()[0];
-	Ball* ball = new Ball(400.0f, 100.0f, 7.5f, 100.0f, 0.f, sprite);
+	Ball* ball = new Ball(400.0f, 100.0f, BALL_RADIUS, 100.0f, 0.f, sprite);
 	balls.push_back(ball);
-	Ball* ball2 = new Ball(600.f, 95.0f, 7.5f, -200.0f, 0.0f, sprite);
+	Ball* ball2 = new Ball(600.f, 95.0f, BALL_RADIUS, -200.0f, 0.0f, sprite);
 	balls.push_back(ball2);
 }
 
