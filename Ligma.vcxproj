@@ -166,6 +166,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="BallsManager.h" />
     <ClInclude Include="DisplayableObject.h" />
+    <ClInclude Include="Edge.h" />
     <ClInclude Include="GameConsts.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="RaylibSprite.h" />

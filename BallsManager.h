@@ -19,6 +19,7 @@ private:
 
 	static BallsManager* instance;
 	std::vector<class Ball*> balls;
+	std::vector<class Edge*> edges;
 	class QuadTree* quadTree;
 };
 
