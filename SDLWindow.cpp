@@ -91,7 +91,7 @@ void SDLWindow::InternalDrawBackground()
 	destRect.h = WINDOW_HEIGHT;
 
 	// Interprete the sprite data as a SDL texture
-	Sprite* backgroundSprite = SpritesLoader::GetSprites()[16];
+	Sprite* backgroundSprite = SpritesLoader::GetSprites()[4];
 	const void* data = backgroundSprite->GetData();
 	SDL_Texture* texture = (SDL_Texture*)data;
 

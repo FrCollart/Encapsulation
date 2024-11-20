@@ -47,7 +47,7 @@ void RaylibWindow::EndDraw()
 
 void RaylibWindow::InternalDrawBackground()
 {
-	Sprite* tableSprite = SpritesLoader::GetSprites()[16];
+	Sprite* tableSprite = SpritesLoader::GetSprites()[4];
 	const void* data = tableSprite->GetData();
 	Texture2D* texture = (Texture2D*)data;
 

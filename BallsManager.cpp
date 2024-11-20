@@ -16,16 +16,12 @@ BallsManager* BallsManager::instance = nullptr;
 
 void BallsManager::Initialize()
 {
-	// TEST ONLY
-	Sprite* sprite = SpritesLoader::GetSprites()[0];
-	Ball* ball = new Ball(600.0f, 100.0f, BALL_RADIUS, -1000.0f, 0.f, sprite);
-	balls.push_back(ball);
-	Ball* ball2 = new Ball(200.f, 95.0f, BALL_RADIUS, 500.0f, 50.0f, sprite);
-	balls.push_back(ball2);
+
+	SpawnBalls();
 
 	//Create pool edges
 	float lineRadius = 5.f;
-	Edge* edge1 = new Edge(0, WINDOW_HEIGHT, 0, 0, lineRadius);
+	Edge* edge1 = new Edge(0, WINDOW_HEIGHT - BALL_RADIUS * 1.5f, 0, BALL_RADIUS * 1.5f, lineRadius);
 	edges.push_back(edge1);
 	Edge* edge2 = new Edge(0, -lineRadius * 2, WINDOW_WIDTH, -lineRadius * 2, lineRadius);
 	edges.push_back(edge2);
@@ -91,7 +87,7 @@ void BallsManager::Update(float deltaTime)
 				{
 					float range = NearBall->GetRadius() + ball->GetRadius();
 					float distance = std::sqrtf(std::powf((NearBall->GetX() - ball->GetX()), 2) + std::powf((NearBall->GetY() - ball->GetY()), 2));
-					if (range >= distance && NearBall != ball)
+					if (range > distance && NearBall != ball)
 					{
 						vecCollidingPairs.push_back({ ball, NearBall });
 
@@ -200,6 +196,71 @@ void BallsManager::CleanUp()
 {
 	balls.clear();
 	edges.clear();
+}
+
+void BallsManager::SpawnBalls()
+{
+	//white
+	Sprite* sprite = SpritesLoader::GetSprites()[0];
+	Ball* ball = new Ball(WINDOW_WIDTH * 1.75f / 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS, BALL_RADIUS, 0.f, 0.f, sprite);
+	balls.push_back(ball);
+
+	//red and blue from left to right and top to bot
+
+	//frontmost
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+
+	//col 2
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 1.75f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 2.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 1.75f, WINDOW_HEIGHT / 2.f + BALL_RADIUS *.1f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+
+	//col3
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 3.5f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 3.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[3];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 3.5f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 1.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 3.5f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * 1.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+
+	//col4
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 5.25f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 4.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 5.25f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 2.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 5.25f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * .1f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 5.25f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * 2.1f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+
+	//col5
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 5.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 3.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 1.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[2];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * 1.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
+	sprite = SpritesLoader::GetSprites()[1];
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * 3.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	balls.push_back(ball);
 }
 
 BallsManager* BallsManager::GetInstance()
