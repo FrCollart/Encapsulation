@@ -44,7 +44,7 @@ void BallsManager::Update(float deltaTime)
 		ball->SetX(ball->GetX() + (ball->GetVelocityX() * deltaTime));
 		ball->SetY(ball->GetY() + (ball->GetVelocityY() * deltaTime));
 
-		if (std::fabs(ball->GetVelocityX() * ball->GetVelocityX() + ball->GetVelocityY() * ball->GetVelocityY()) < 0.1f)
+		if (std::fabs(ball->GetVelocityX() * ball->GetVelocityX() + ball->GetVelocityY() * ball->GetVelocityY()) < 5.f)
 		{
 			ball->SetVelocityX(0);
 			ball->SetVelocityY(0);
