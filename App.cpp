@@ -40,14 +40,14 @@ void App::ChangeState(RunState inState)
 
 		if (inState == SDLRun)
 		{
-			currentWindow = new SDLWindow();
 			eventHandler = new SDLEventHandler();
+			currentWindow = new SDLWindow();
 		}
 
 		if (inState == RaylibRun)
 		{
-			currentWindow = new RaylibWindow();
 			eventHandler = new RaylibEventHandler();
+			currentWindow = new RaylibWindow();
 		}
 
 		currentWindow->Initialize();
