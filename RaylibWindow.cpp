@@ -10,11 +10,12 @@
 #include "TimeModule.h"
 #include "Ball.h"
 #include "GameConsts.h"
+#include "SpritesLoader.h"
 
 void RaylibWindow::Initialize()
 {
 	Window::Initialize();
-	// No need to initialize Raylib 
+	// No need to initialize Raylib
 }
 
 void RaylibWindow::CreateWindow(int width, int height, const char* title)
@@ -42,6 +43,15 @@ void RaylibWindow::BeginDraw()
 void RaylibWindow::EndDraw()
 {
 	EndDrawing();
+}
+
+void RaylibWindow::InternalDrawBackground()
+{
+	Sprite* tableSprite = SpritesLoader::GetSprites()[16];
+	const void* data = tableSprite->GetData();
+	Texture2D* texture = (Texture2D*)data;
+
+	DrawTexture(*texture, 0, 0, WHITE);
 }
 
 void RaylibWindow::InternalDraw()

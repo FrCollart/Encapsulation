@@ -1,6 +1,10 @@
 // Base class
 #include "SDLSprite.h"
 
+// C++ dependencies
+#include <fstream>
+#include <iostream>
+
 // Project dependencies
 #include "SDLWindow.h"
 #include "GameConsts.h"
@@ -10,6 +14,12 @@
 
 void SDLSprite::LoadImage(const char* filepath, int width, int height)
 {
+    std::ifstream file(filepath);
+    if (!file) {
+        std::cout << "Failed to open file: " << filepath << std::endl;
+        return;
+    }
+
     SDL_Surface* surface = IMG_Load(filepath);
     if (!surface)
     {

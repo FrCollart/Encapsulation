@@ -10,6 +10,7 @@
 #include "Ball.h"
 #include "TimeModule.h"
 #include "GameConsts.h"
+#include "SpritesLoader.h"
 
 // External dependencies
 #include <SDL.h>
@@ -86,8 +87,27 @@ void SDLWindow::EndDraw()
 	SDL_RenderPresent(renderer);
 }
 
+void SDLWindow::InternalDrawBackground()
+{
+	// Draw Background
+	SDL_Rect destRect = SDL_Rect();
+	destRect.x = 0;
+	destRect.y = 0;
+	destRect.w = WINDOW_WIDTH;
+	destRect.h = WINDOW_HEIGHT;
+
+	// Interprete the sprite data as a SDL texture
+	Sprite* backgroundSprite = SpritesLoader::GetSprites()[16];
+	const void* data = backgroundSprite->GetData();
+	SDL_Texture* texture = (SDL_Texture*)data;
+
+	// Draw
+	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
+}
+
 void SDLWindow::InternalDraw()
 {
+	// Draw Objects
 	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
 		InternalDrawSprite(*ball->GetSprite(), (int)ball->GetX(), (int)ball->GetY());

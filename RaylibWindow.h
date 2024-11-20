@@ -15,6 +15,7 @@ public:
     void Clear() override;
     void BeginDraw() override;
     void EndDraw() override;
+    void InternalDrawBackground() override;
     void InternalDraw() override;
     void InternalDrawFPS() override;
     void Cleanup() override;

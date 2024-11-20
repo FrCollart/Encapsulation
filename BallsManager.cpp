@@ -17,11 +17,12 @@ BallsManager* BallsManager::instance = nullptr;
 void BallsManager::Initialize()
 {
 	// TEST ONLY
-	Sprite* sprite = SpritesLoader::GetSprites()[0];
-	Ball* ball = new Ball(400.0f, 0.0f, BALL_RADIUS, -800.0f, 0.f, sprite);
+	Sprite* sprite1 = SpritesLoader::GetSprites()[0];
+	Ball* ball = new Ball(400.0f, 0.0f, BALL_RADIUS, -800.0f, 0.f, sprite1);
 	balls.push_back(ball);
-	/*Ball* ball2 = new Ball(600.f, 95.0f, 55.f, -200.0f, 50.0f, sprite);
-	balls.push_back(ball2);*/
+	Sprite* sprite2 = SpritesLoader::GetSprites()[8];
+	Ball* ball2 = new Ball(600.f, 95.0f, BALL_RADIUS, -200.0f, 50.0f, sprite2);
+	balls.push_back(ball2);
 
 	//Create pool edges
 	float lineRadius = 15.f;

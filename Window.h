@@ -21,6 +21,7 @@ public:
 protected:
     virtual void InternalDraw() = 0;
     virtual void InternalDrawFPS() = 0;
+    virtual void InternalDrawBackground() = 0;
 
     class TimeModule* timeModule = nullptr;
 };

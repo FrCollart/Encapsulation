@@ -11,18 +11,10 @@ void Window::Initialize()
 
 void Window::Draw()
 {
-	// Initialize drawing
 	BeginDraw();
-
-	// Clear the window
 	Clear();
-
-	// Draw all elements
-	InternalDraw();
-
-	// Display FPS
+	InternalDrawBackground();
+	InternalDraw();             // Draw all elements
 	InternalDrawFPS();
-
-	// Finalize drawing
 	EndDraw();
 }
