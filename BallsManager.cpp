@@ -18,15 +18,21 @@ void BallsManager::Initialize()
 {
 	// TEST ONLY
 	Sprite* sprite = SpritesLoader::GetSprites()[0];
-	Ball* ball = new Ball(400.0f, 0.0f, BALL_RADIUS, -800.0f, 0.f, sprite);
+	Ball* ball = new Ball(600.0f, 100.0f, BALL_RADIUS, -1000.0f, 0.f, sprite);
 	balls.push_back(ball);
-	/*Ball* ball2 = new Ball(600.f, 95.0f, 55.f, -200.0f, 50.0f, sprite);
-	balls.push_back(ball2);*/
+	Ball* ball2 = new Ball(200.f, 95.0f, BALL_RADIUS, 500.0f, 50.0f, sprite);
+	balls.push_back(ball2);
 
 	//Create pool edges
-	float lineRadius = 15.f;
-	Edge* edge = new Edge(0, WINDOW_HEIGHT, 0, 0, lineRadius);
-	edges.push_back(edge);
+	float lineRadius = 5.f;
+	Edge* edge1 = new Edge(0, WINDOW_HEIGHT, 0, 0, lineRadius);
+	edges.push_back(edge1);
+	Edge* edge2 = new Edge(0, -lineRadius * 2, WINDOW_WIDTH, -lineRadius * 2, lineRadius);
+	edges.push_back(edge2);
+	Edge* edge3 = new Edge(WINDOW_WIDTH, WINDOW_HEIGHT - lineRadius * 2, 0, WINDOW_HEIGHT - lineRadius * 2, lineRadius);
+	edges.push_back(edge3);
+	Edge* edge4 = new Edge(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH, 0, lineRadius);
+	edges.push_back(edge4);
 }
 
 void BallsManager::Update(float deltaTime)
@@ -55,7 +61,7 @@ void BallsManager::Update(float deltaTime)
 		{
 
 			for (Ball* ball : balls)
-			{ 
+			{
 				//ball displacement
 				if (ball->GetSimTimeRemainging() > 0.0f)
 				{
