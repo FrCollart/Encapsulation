@@ -96,7 +96,7 @@ void SDLWindow::InternalDraw()
 
 void SDLWindow::InternalDrawFPS()
 {
-	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetFPS()));
+	std::string fpsText = "FPS: " + std::to_string((int)timeModule->GetAverageFPS());
 
 	SDL_Color color = { 0, 0, 0, 255 };
 	SDL_Surface* surface = TTF_RenderText_Solid(font, fpsText.c_str(), color);

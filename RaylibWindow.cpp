@@ -54,7 +54,7 @@ void RaylibWindow::InternalDraw()
 
 void RaylibWindow::InternalDrawFPS()
 {
-	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetFPS()));
+	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetAverageFPS()));
 
 	Vector2 textSize = MeasureTextEx(font, fpsText.c_str(), 20, 1.0f);
 	Vector2 position = { WINDOW_WIDTH - textSize.x - 10, 10 };
