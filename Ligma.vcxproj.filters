@@ -11,22 +11,22 @@
       <Filter>LibsTests\Private</Filter>
     </ClCompile>
     <ClCompile Include="RaylibSprite.cpp">
-      <Filter>Sprite\Private</Filter>
+      <Filter>Encapsulation\Sprite\Private</Filter>
     </ClCompile>
     <ClCompile Include="SDLSprite.cpp">
-      <Filter>Sprite\Private</Filter>
+      <Filter>Encapsulation\Sprite\Private</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>Sprite\Private</Filter>
+      <Filter>Encapsulation\Sprite\Private</Filter>
     </ClCompile>
     <ClCompile Include="RaylibWindow.cpp">
-      <Filter>Window\Private</Filter>
+      <Filter>Encapsulation\Window\Private</Filter>
     </ClCompile>
     <ClCompile Include="SDLWindow.cpp">
-      <Filter>Window\Private</Filter>
+      <Filter>Encapsulation\Window\Private</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Window\Private</Filter>
+      <Filter>Encapsulation\Window\Private</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
       <Filter>Core\Private</Filter>
@@ -40,14 +40,32 @@
     <ClCompile Include="DisplayableObject.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
-    <ClCompile Include="SpritesLoader.cpp">
-      <Filter>Core\Private</Filter>
-    </ClCompile>
     <ClCompile Include="TimeModule.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
     <ClCompile Include="QuadTree.cpp">
       <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="InputListener.cpp">
+      <Filter>Encapsulation\Input\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="RaylibInputListener.cpp">
+      <Filter>Encapsulation\Input\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLInputListener.cpp">
+      <Filter>Encapsulation\Input\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SpritesLoader.cpp">
+      <Filter>Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>Encapsulation\Events\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="RaylibEventHandler.cpp">
+      <Filter>Encapsulation\Events\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLEventHandler.cpp">
+      <Filter>Encapsulation\Events\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,24 +87,6 @@
     <Filter Include="Core\Public">
       <UniqueIdentifier>{09642493-fe62-4da8-85ea-3407585920b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Window">
-      <UniqueIdentifier>{106e8c0b-25fd-489b-811e-c2fa66171572}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sprite">
-      <UniqueIdentifier>{341964a1-1f7a-4ae8-a96e-f9a068a74de8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Window\Public">
-      <UniqueIdentifier>{0a187529-e009-4ef1-a914-7ed50d40d62e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Window\Private">
-      <UniqueIdentifier>{cab7329e-c71a-40d0-b56e-d2657f3b9142}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sprite\Public">
-      <UniqueIdentifier>{79f71084-021c-46fc-bc7f-f20c7023884f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sprite\Private">
-      <UniqueIdentifier>{e68de850-6cac-4e33-8369-946591db233e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Balls">
       <UniqueIdentifier>{c06b8806-ad99-4156-8578-fd7ef39e1eb9}</UniqueIdentifier>
     </Filter>
@@ -95,6 +95,45 @@
     </Filter>
     <Filter Include="Balls\Public">
       <UniqueIdentifier>{14a298f6-b391-408f-be9b-bdfc4a58d1d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation">
+      <UniqueIdentifier>{5516dbbe-5e29-4310-b7e6-164a067d2322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Input">
+      <UniqueIdentifier>{7fc0bf09-ba2d-43f1-91bc-6c49ff1999e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Input\Private">
+      <UniqueIdentifier>{1272ebf0-3fbf-4956-b0ed-a63a5cdbb28b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Input\Public">
+      <UniqueIdentifier>{fa97abca-48b3-4a9e-9dab-ef1631717958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Sprite">
+      <UniqueIdentifier>{341964a1-1f7a-4ae8-a96e-f9a068a74de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Sprite\Public">
+      <UniqueIdentifier>{79f71084-021c-46fc-bc7f-f20c7023884f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Sprite\Private">
+      <UniqueIdentifier>{e68de850-6cac-4e33-8369-946591db233e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Window">
+      <UniqueIdentifier>{106e8c0b-25fd-489b-811e-c2fa66171572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Window\Public">
+      <UniqueIdentifier>{0a187529-e009-4ef1-a914-7ed50d40d62e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Window\Private">
+      <UniqueIdentifier>{cab7329e-c71a-40d0-b56e-d2657f3b9142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Events">
+      <UniqueIdentifier>{8c002872-05e5-411e-9dda-1d1e89708ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Events\Private">
+      <UniqueIdentifier>{8365efa1-0692-4bf2-a76c-ceae6ab91880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encapsulation\Events\Public">
+      <UniqueIdentifier>{cfd26cb9-46c2-4bf7-b775-3497cda62b21}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,22 +144,22 @@
       <Filter>LibsTests\Public</Filter>
     </ClInclude>
     <ClInclude Include="RaylibSprite.h">
-      <Filter>Sprite\Public</Filter>
+      <Filter>Encapsulation\Sprite\Public</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>Sprite\Public</Filter>
+      <Filter>Encapsulation\Sprite\Public</Filter>
     </ClInclude>
     <ClInclude Include="SDLSprite.h">
-      <Filter>Sprite\Public</Filter>
+      <Filter>Encapsulation\Sprite\Public</Filter>
     </ClInclude>
     <ClInclude Include="RaylibWindow.h">
-      <Filter>Window\Public</Filter>
+      <Filter>Encapsulation\Window\Public</Filter>
     </ClInclude>
     <ClInclude Include="SDLWindow.h">
-      <Filter>Window\Public</Filter>
+      <Filter>Encapsulation\Window\Public</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Window\Public</Filter>
+      <Filter>Encapsulation\Window\Public</Filter>
     </ClInclude>
     <ClInclude Include="App.h">
       <Filter>Core\Public</Filter>
@@ -134,9 +173,6 @@
     <ClInclude Include="DisplayableObject.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
-    <ClInclude Include="SpritesLoader.h">
-      <Filter>Core\Public</Filter>
-    </ClInclude>
     <ClInclude Include="TimeModule.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
@@ -148,6 +184,27 @@
     </ClInclude>
     <ClInclude Include="Edge.h">
       <Filter>Balls\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="InputListener.h">
+      <Filter>Encapsulation\Input\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RaylibInputListener.h">
+      <Filter>Encapsulation\Input\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLInputListener.h">
+      <Filter>Encapsulation\Input\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SpritesLoader.h">
+      <Filter>Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Encapsulation\Events\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RaylibEventHandler.h">
+      <Filter>Encapsulation\Events\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLEventHandler.h">
+      <Filter>Encapsulation\Events\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

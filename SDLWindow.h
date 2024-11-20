@@ -31,7 +31,6 @@ public:
 
 private:
     struct SDL_Window* window = nullptr;
-    bool isRunning = true;
     TTF_Font* font = nullptr;
 };
 

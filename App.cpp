@@ -12,6 +12,8 @@
 #include "SpritesLoader.h"
 #include "TimeModule.h"
 #include "GameConsts.h"
+#include "SDLEventHandler.h"
+#include "RaylibEventHandler.h"
 
 App::App()
 {
@@ -27,9 +29,11 @@ void App::ChangeState(RunState inState)
 		return;
 	case SDLRun:
 		delete currentWindow;
+		delete eventHandler;
 		break;
 	case RaylibRun:
 		delete currentWindow;
+		delete eventHandler;
 		break;
 	case WaitForLib:
 		if (inState == Close) return;
@@ -37,11 +41,13 @@ void App::ChangeState(RunState inState)
 		if (inState == SDLRun)
 		{
 			currentWindow = new SDLWindow();
+			eventHandler = new SDLEventHandler();
 		}
 
 		if (inState == RaylibRun)
 		{
 			currentWindow = new RaylibWindow();
+			eventHandler = new RaylibEventHandler();
 		}
 
 		currentWindow->Initialize();
@@ -106,10 +112,10 @@ void App::RunWindow()
 	while (currentWindow->IsOpen())
 	{
 		timeModule->Update();
-		float deltaTime = timeModule->GetDeltaTime();
+		eventHandler->HandleEvents();
 
 		// Update and draw frame
-		ballsManager->Update(deltaTime);
+		ballsManager->Update(timeModule->GetDeltaTime());
 		currentWindow->Draw();
 	}
 }

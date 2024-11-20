@@ -11,6 +11,7 @@
 #include "TimeModule.h"
 #include "GameConsts.h"
 #include "SpritesLoader.h"
+#include "SDLEventHandler.h"
 
 // External dependencies
 #include <SDL.h>
@@ -61,7 +62,7 @@ void SDLWindow::CreateWindow(int width, int height, const char* title)
 
 bool SDLWindow::IsOpen() const
 {
-	return isRunning;
+	return SDLEventHandler::IsRunning();
 }
 
 void SDLWindow::Clear()
@@ -72,14 +73,7 @@ void SDLWindow::Clear()
 
 void SDLWindow::BeginDraw()
 {
-	SDL_Event event;
-	while (SDL_PollEvent(&event))
-	{
-		if (event.type == SDL_QUIT)
-		{
-			isRunning = false;
-		}
-	}
+	// No need to do anything here
 }
 
 void SDLWindow::EndDraw()

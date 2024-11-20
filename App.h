@@ -34,4 +34,5 @@ private:
 	class BallsManager* ballsManager = nullptr;
 	class InputManager* inputManager = nullptr;	
 	class TimeModule* timeModule = nullptr;
+	class EventHandler* eventHandler = nullptr;
 };
