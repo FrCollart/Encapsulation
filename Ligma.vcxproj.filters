@@ -46,15 +46,6 @@
     <ClCompile Include="QuadTree.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
-    <ClCompile Include="InputListener.cpp">
-      <Filter>Encapsulation\Input\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="RaylibInputListener.cpp">
-      <Filter>Encapsulation\Input\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLInputListener.cpp">
-      <Filter>Encapsulation\Input\Private</Filter>
-    </ClCompile>
     <ClCompile Include="SpritesLoader.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
@@ -98,15 +89,6 @@
     </Filter>
     <Filter Include="Encapsulation">
       <UniqueIdentifier>{5516dbbe-5e29-4310-b7e6-164a067d2322}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Encapsulation\Input">
-      <UniqueIdentifier>{7fc0bf09-ba2d-43f1-91bc-6c49ff1999e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Encapsulation\Input\Private">
-      <UniqueIdentifier>{1272ebf0-3fbf-4956-b0ed-a63a5cdbb28b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Encapsulation\Input\Public">
-      <UniqueIdentifier>{fa97abca-48b3-4a9e-9dab-ef1631717958}</UniqueIdentifier>
     </Filter>
     <Filter Include="Encapsulation\Sprite">
       <UniqueIdentifier>{341964a1-1f7a-4ae8-a96e-f9a068a74de8}</UniqueIdentifier>
@@ -184,15 +166,6 @@
     </ClInclude>
     <ClInclude Include="Edge.h">
       <Filter>Balls\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="InputListener.h">
-      <Filter>Encapsulation\Input\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="RaylibInputListener.h">
-      <Filter>Encapsulation\Input\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="SDLInputListener.h">
-      <Filter>Encapsulation\Input\Public</Filter>
     </ClInclude>
     <ClInclude Include="SpritesLoader.h">
       <Filter>Core\Public</Filter>

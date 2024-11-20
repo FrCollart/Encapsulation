@@ -1,18 +1,10 @@
 // Base class
 #include "SDLEventHandler.h"
 
-// Project dependencies
-#include "SDLInputListener.h"
-
 // External dependencies
 #include <SDL.h>
 
 bool SDLEventHandler::isRunning = true;
-
-SDLEventHandler::SDLEventHandler()
-{
-    inputListener = new SDLInputListener();
-}
 
 void SDLEventHandler::HandleEvents()
 {
@@ -27,12 +19,12 @@ void SDLEventHandler::HandleEvents()
 
         case SDL_MOUSEBUTTONDOWN:
             if (event.button.button == SDL_BUTTON_LEFT) {
-                inputListener->OnLeftClickPressed(event);
+                OnLeftClickPressed(event.button.x, event.button.y);
             }
             break;
 
         case SDL_MOUSEBUTTONUP:
-            inputListener->OnLeftClickReleased(event);
+            OnLeftClickReleased(event.button.x, event.button.y);
             break;
         }
 	}
