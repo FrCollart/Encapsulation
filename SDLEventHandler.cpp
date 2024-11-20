@@ -24,7 +24,9 @@ void SDLEventHandler::HandleEvents()
             break;
 
         case SDL_MOUSEBUTTONUP:
-            OnLeftClickReleased(event.button.x, event.button.y);
+            if (event.button.button == SDL_BUTTON_LEFT) {
+				OnLeftClickReleased(event.button.x, event.button.y);
+			}
             break;
         }
 	}
