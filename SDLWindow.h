@@ -17,14 +17,11 @@ public:
     void BeginDraw() override;
     void EndDraw() override;
     void InternalDrawBackground() override;
-    void InternalDraw() override;
+    void InternalDrawSprite(class DisplayableObject* object) override;
     void InternalDrawFPS() override;
     void Cleanup() override;
 
     static struct SDL_Renderer* GetRenderer() { return renderer; }
-
-private:
-    void InternalDrawSprite(const class Sprite& sprite, int x, int y);
 
 public:
     static struct SDL_Renderer* renderer;

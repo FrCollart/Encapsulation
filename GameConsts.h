@@ -9,6 +9,7 @@ constexpr const char* WINDOW_TITLE = "Ligma";
 constexpr const char* TABLE_TEXTURE_PATH = "Textures/PoolTable.png";
 constexpr const char* WHITE_BALL_TEXTURE_PATH = "Textures/PoolBallWhite.png";
 constexpr const char* BALL_TEXTURE_PATH = "Textures/PoolBall";
+constexpr const char* BALL_PREDICTION_TEXTURE_PATH = "Textures/BallPrediction.png";
 
 constexpr const char* FONT_PATH = "Fonts/Roboto-Black.ttf";
 

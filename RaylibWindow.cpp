@@ -54,14 +54,6 @@ void RaylibWindow::InternalDrawBackground()
 	DrawTexture(*texture, 0, 0, WHITE);
 }
 
-void RaylibWindow::InternalDraw()
-{
-	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
-	{
-		InternalDrawSprite(*ball->GetSprite(), (int)ball->GetX(), (int)ball->GetY());
-	}
-}
-
 void RaylibWindow::InternalDrawFPS()
 {
 	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetAverageFPS()));
@@ -77,12 +69,13 @@ void RaylibWindow::InternalDrawFPS()
 	DrawTextEx(font, fpsText.c_str(), position, 20, 1.0f, BLACK);
 }
 
-void RaylibWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
+void RaylibWindow::InternalDrawSprite(DisplayableObject* object)
 {
-	const void* data = sprite.GetData();
+	Sprite* sprite = object->GetSprite();
+	const void* data = sprite->GetData();
 	Texture2D* texture = (Texture2D*)data;
 
-	DrawTexture(*texture, x, y, WHITE);
+	DrawTexture(*texture, object->GetX(), object->GetY(), WHITE);
 }
 
 void RaylibWindow::Cleanup()

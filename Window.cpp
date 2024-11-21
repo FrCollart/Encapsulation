@@ -3,6 +3,9 @@
 
 // Project dependencies
 #include "TimeModule.h"
+#include "BallsManager.h"
+#include "BallPreview.h"
+#include "Ball.h"
 
 void Window::Initialize()
 {
@@ -14,7 +17,22 @@ void Window::Draw()
 	BeginDraw();
 	Clear();
 	InternalDrawBackground();
-	InternalDraw();             // Draw all elements
-	InternalDrawFPS();
+
+	// Iterate through all known objects and draw them
+
+	// Draw all balls
+	for (auto& ball : BallsManager::GetInstance()->GetBalls())
+	{
+		InternalDrawSprite(ball);
+	}
+
+	// Draw ball preview
+	DisplayableObject* ballPreview = BallPreview::GetInstance()->GetBallPreview();
+	if (ballPreview)
+	{
+		InternalDrawSprite(ballPreview);
+	}
+
+	InternalDrawFPS(); // Future improvaments : REF this to InternalDrawUI
 	EndDraw();
 }

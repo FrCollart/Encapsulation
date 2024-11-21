@@ -16,12 +16,9 @@ public:
     void BeginDraw() override;
     void EndDraw() override;
     void InternalDrawBackground() override;
-    void InternalDraw() override;
+    void InternalDrawSprite(class DisplayableObject* object) override;
     void InternalDrawFPS() override;
     void Cleanup() override;
-
-private:
-    void InternalDrawSprite(const class Sprite& sprite, int x, int y);
 
 private:
     Font font;

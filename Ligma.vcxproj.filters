@@ -58,6 +58,9 @@
     <ClCompile Include="SDLEventHandler.cpp">
       <Filter>Encapsulation\Events\Private</Filter>
     </ClCompile>
+    <ClCompile Include="BallPreview.cpp">
+      <Filter>Balls\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="LibsTests">
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="SDLEventHandler.h">
       <Filter>Encapsulation\Events\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="BallPreview.h">
+      <Filter>Balls\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

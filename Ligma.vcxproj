@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="BallPreview.cpp" />
     <ClCompile Include="BallsManager.cpp" />
     <ClCompile Include="DisplayableObject.cpp" />
     <ClCompile Include="EventHandler.cpp" />
@@ -167,6 +168,7 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="BallPreview.h" />
     <ClInclude Include="BallsManager.h" />
     <ClInclude Include="DisplayableObject.h" />
     <ClInclude Include="Edge.h" />

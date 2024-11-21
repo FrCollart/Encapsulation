@@ -12,6 +12,7 @@
 #include "GameConsts.h"
 #include "SpritesLoader.h"
 #include "SDLEventHandler.h"
+#include "BallPreview.h"
 
 // External dependencies
 #include <SDL.h>
@@ -99,15 +100,6 @@ void SDLWindow::InternalDrawBackground()
 	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
 }
 
-void SDLWindow::InternalDraw()
-{
-	// Draw Objects
-	for (const auto& ball : BallsManager::GetInstance()->GetBalls())
-	{
-		InternalDrawSprite(*ball->GetSprite(), (int)ball->GetX(), (int)ball->GetY());
-	}
-}
-
 void SDLWindow::InternalDrawFPS()
 {
 	std::string fpsText = "FPS: " + std::to_string((int)timeModule->GetAverageFPS());
@@ -149,16 +141,18 @@ void SDLWindow::InternalDrawFPS()
 	SDL_DestroyTexture(texture);
 }
 
-void SDLWindow::InternalDrawSprite(const Sprite& sprite, int x, int y)
+void SDLWindow::InternalDrawSprite(DisplayableObject* object)
 {
 	SDL_Rect destRect = SDL_Rect();
-	destRect.x = x;
-	destRect.y = y;
-	destRect.w = sprite.GetWidth();
-	destRect.h = sprite.GetHeight();
+	destRect.x = object->GetX();
+	destRect.y = object->GetY();
+
+	Sprite* sprite = object->GetSprite();
+	destRect.w = sprite->GetWidth();
+	destRect.h = sprite->GetHeight();
 
 	// Interprete the sprite data as a SDL texture
-	const void* data = sprite.GetData();
+	const void* data = sprite->GetData();
 	SDL_Texture* texture = (SDL_Texture*)data;
 
 	// Draw

@@ -19,7 +19,7 @@ public:
     void Draw();
 
 protected:
-    virtual void InternalDraw() = 0;
+    virtual void InternalDrawSprite(class DisplayableObject* object) = 0;
     virtual void InternalDrawFPS() = 0;
     virtual void InternalDrawBackground() = 0;
 
