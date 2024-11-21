@@ -19,16 +19,7 @@ void BallsManager::Initialize()
 
 	SpawnBalls();
 
-	//Create pool edges
-	float lineRadius = 5.f;
-	Edge* edge1 = new Edge(0, WINDOW_HEIGHT - BALL_RADIUS * 1.5f, 0, BALL_RADIUS * 1.5f, lineRadius);
-	edges.push_back(edge1);
-	Edge* edge2 = new Edge(0, -lineRadius * 2, WINDOW_WIDTH, -lineRadius * 2, lineRadius);
-	edges.push_back(edge2);
-	Edge* edge3 = new Edge(WINDOW_WIDTH, WINDOW_HEIGHT - lineRadius * 2, 0, WINDOW_HEIGHT - lineRadius * 2, lineRadius);
-	edges.push_back(edge3);
-	Edge* edge4 = new Edge(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH, 0, lineRadius);
-	edges.push_back(edge4);
+	SpawnEdges();
 }
 
 void BallsManager::Update(float deltaTime)
@@ -46,10 +37,9 @@ void BallsManager::Update(float deltaTime)
 		delete quadTree;
 
 		//Setup Collision Detection for balls
-		quadTree = new QuadTree(rect, 4);
 		for (Ball* ball : balls)
 		{
-			quadTree->AddBall(ball);
+
 			ball->SetSimTimeRemaining(simulatedDeltaTime);
 		}
 
@@ -82,8 +72,7 @@ void BallsManager::Update(float deltaTime)
 			{
 				//ball / ball collision check 
 				Rectangle* ballDetection = new Rectangle(ball->GetX(), ball->GetY(), ball->GetRadius() * 4, ball->GetRadius() * 4);
-				std::vector<Ball*> others = quadTree->Query(ballDetection);
-				for (Ball* NearBall : others)
+				for (Ball* NearBall : balls)
 				{
 					float range = NearBall->GetRadius() + ball->GetRadius();
 					float distance = std::sqrtf(std::powf((NearBall->GetX() - ball->GetX()), 2) + std::powf((NearBall->GetY() - ball->GetY()), 2));
@@ -100,6 +89,7 @@ void BallsManager::Update(float deltaTime)
 						NearBall->SetY(NearBall->GetY() + overlap * (ball->GetY() - NearBall->GetY()) / distance);
 					}
 				}
+				delete ballDetection;
 
 				//ball / Edge Collision
 				for (Edge* edge : edges)
@@ -217,7 +207,7 @@ void BallsManager::SpawnBalls()
 	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 1.75f, WINDOW_HEIGHT / 2.f - BALL_RADIUS * 2.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
 	balls.push_back(ball);
 	sprite = SpritesLoader::GetSprites()[2];
-	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 1.75f, WINDOW_HEIGHT / 2.f + BALL_RADIUS *.1f, BALL_RADIUS, 0.0f, 0.0f, sprite);
+	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 1.75f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * .1f, BALL_RADIUS, 0.0f, 0.0f, sprite);
 	balls.push_back(ball);
 
 	//col3
@@ -261,6 +251,30 @@ void BallsManager::SpawnBalls()
 	sprite = SpritesLoader::GetSprites()[1];
 	ball = new Ball(WINDOW_WIDTH * 5.f / 7.f + BALL_RADIUS * 7.f, WINDOW_HEIGHT / 2.f + BALL_RADIUS * 3.f, BALL_RADIUS, 0.0f, 0.0f, sprite);
 	balls.push_back(ball);
+}
+
+void BallsManager::SpawnEdges()
+{
+	//Create pool edges
+	float lineRadius = BALL_RADIUS * 1.5f;
+
+	//horizontal
+	Edge* edge = new Edge(WINDOW_WIDTH - lineRadius * 4.3f, WINDOW_HEIGHT - lineRadius * 1.5f, WINDOW_WIDTH / 2 + lineRadius * 2, WINDOW_HEIGHT - lineRadius * 1.5f, lineRadius); //bot right
+	edges.push_back(edge);
+	edge = new Edge(WINDOW_WIDTH / 2 - lineRadius * 3, WINDOW_HEIGHT - lineRadius * 1.5f, lineRadius * 3.f, WINDOW_HEIGHT - lineRadius * 1.5f, lineRadius); //bot left
+	edges.push_back(edge);
+
+	edge = new Edge(WINDOW_WIDTH - lineRadius * 4.3f, lineRadius * .25f, WINDOW_WIDTH / 2 + lineRadius * 2, lineRadius * .25f, lineRadius); //top right
+	edges.push_back(edge);
+	edge = new Edge(WINDOW_WIDTH / 2 - lineRadius * 3, lineRadius * .25f, lineRadius * 3.f, lineRadius * .25f, lineRadius); //top left
+	edges.push_back(edge);
+
+	//vertical
+	edge = new Edge(lineRadius * .25f, WINDOW_HEIGHT - lineRadius * 4, lineRadius * .25f, lineRadius * 3, lineRadius); //left
+	edges.push_back(edge);
+
+	edge = new Edge(WINDOW_WIDTH - lineRadius * 1.6f, WINDOW_HEIGHT - lineRadius * 4, WINDOW_WIDTH - lineRadius * 1.6f, lineRadius * 3, lineRadius); //right
+	edges.push_back(edge);
 }
 
 void BallsManager::HitWhiteBall(int dirX, int dirY)

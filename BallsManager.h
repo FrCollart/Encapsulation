@@ -11,6 +11,7 @@ public:
 	void Update(float deltaTime);
 	void CleanUp();
 	void SpawnBalls();
+	void SpawnEdges();
 
 	void HitWhiteBall(int dirX, int dirY);
 
