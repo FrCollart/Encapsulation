@@ -12,5 +12,6 @@ public:
 
 private:
 	static bool isRunning;
+	bool isLeftClickHeld = false;
 };
 

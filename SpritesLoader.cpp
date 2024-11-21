@@ -38,7 +38,7 @@ void SpritesLoader::SDLLoadSprites()
 
 	// Ball prediction
 	SDLSprite* ballPredictionSprite = new SDLSprite();
-	ballPredictionSprite->LoadImage(BALL_PREDICTION_TEXTURE_PATH, BALL_RADIUS * 2, BALL_RADIUS * 2);
+	ballPredictionSprite->LoadImage(BALL_PREDICTION_TEXTURE_PATH, BALL_RADIUS * 15, BALL_RADIUS * 15);
 	sprites.push_back(ballPredictionSprite);
 }
 
@@ -67,7 +67,7 @@ void SpritesLoader::RaylibLoadSprites()
 
 	// Ball prediction
 	RaylibSprite* ballPredictionSprite = new RaylibSprite();
-	ballPredictionSprite->LoadImage(BALL_PREDICTION_TEXTURE_PATH, BALL_RADIUS * 5, BALL_RADIUS * 5);
+	ballPredictionSprite->LoadImage(BALL_PREDICTION_TEXTURE_PATH, BALL_RADIUS * 15, BALL_RADIUS * 15);
 	sprites.push_back(ballPredictionSprite);
 }
 

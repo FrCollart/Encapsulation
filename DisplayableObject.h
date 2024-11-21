@@ -11,6 +11,8 @@ public:
 	float GetOrientation() const { return orientation; }
 	class Sprite* GetSprite() const { return sprite; }
 
+	void SetX(float x) { this->x = x; }
+	void SetY(float y) { this->y = y; }
 	void SetOrientation(float orientation) { this->orientation = orientation; }
 
 protected:

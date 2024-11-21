@@ -20,17 +20,17 @@ void Window::Draw()
 
 	// Iterate through all known objects and draw them
 
+	// Draw ball preview
+	DisplayableObject* ballPreview = BallPreview::GetInstance()->GetBallPreviewObject();
+	if (ballPreview != nullptr)
+	{
+		InternalDrawSprite(ballPreview);
+	}
+
 	// Draw all balls
 	for (auto& ball : BallsManager::GetInstance()->GetBalls())
 	{
 		InternalDrawSprite(ball);
-	}
-
-	// Draw ball preview
-	DisplayableObject* ballPreview = BallPreview::GetInstance()->GetBallPreview();
-	if (ballPreview)
-	{
-		InternalDrawSprite(ballPreview);
 	}
 
 	InternalDrawFPS(); // Future improvaments : REF this to InternalDrawUI

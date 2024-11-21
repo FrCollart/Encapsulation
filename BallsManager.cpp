@@ -11,6 +11,7 @@
 #include "SpritesLoader.h"
 #include "QuadTree.h"
 #include "GameConsts.h"
+#include "BallPreview.h"
 
 BallsManager* BallsManager::instance = nullptr;
 
@@ -179,6 +180,14 @@ void BallsManager::Update(float deltaTime)
 			}
 			vecCollidingPairs.clear();
 		}
+	}
+
+	// Update Ball preview position
+	DisplayableObject* ballPreviewObject = BallPreview::GetInstance()->GetBallPreviewObject();
+	if (ballPreviewObject != nullptr)
+	{
+		ballPreviewObject->SetX(balls[0]->GetX() - BALL_RADIUS * 6.5f);
+		ballPreviewObject->SetY(balls[0]->GetY() - BALL_RADIUS * 6.5f);
 	}
 }
 

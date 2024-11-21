@@ -17,4 +17,10 @@ void RaylibEventHandler::HandleEvents()
 		Vector2 mousePosition = GetMousePosition();
 		OnLeftClickReleased(mousePosition.x, mousePosition.y);
 	}
+
+	if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
+	{
+		Vector2 mousePosition = GetMousePosition();
+		OnLeftClickHeld(mousePosition.x, mousePosition.y);
+	}
 }
