@@ -15,11 +15,11 @@ Vous n'avez pas besoin de les télécharger, elles sont intégrées au projet.
 
 Ce dépôt ne contient pas de release, vous pouvez les générer vous-même (via Visual Studio) en suivant ces différentes étapes:
 
-1. # Lancer le fichier Ligma.sln
-2. # Mettez vous en mode Release ou Debug et générez la solution (Ctrl + B)
-3. # Rendez vous ensuite dans le dossier source et copiez les fichiez suivants: raylib.dll, SDL2.dll, SDL2_image.dll et SDL_ttf.dll
-4. # Rendez vous dans le dossier de build précédemment créé (./x64/Debug ou ./x64/Release ou ./x86/Debug ou ./x86/Release) et collez les fichiers
-5. # Lancez l'application
+1. **Lancer le fichier Ligma.sln**
+2. **Mettez vous en mode Release ou Debug et générez la solution (Ctrl + B)**
+3. **Rendez vous ensuite dans le dossier source et copiez les fichiez suivants: raylib.dll, SDL2.dll, SDL2_image.dll et SDL_ttf.dll**
+4. **Rendez vous dans le dossier de build précédemment créé (./x64/Debug ou ./x64/Release ou ./x86/Debug ou ./x86/Release) et collez les fichiers**
+5. **Lancez l'application**
 
 ---
 
