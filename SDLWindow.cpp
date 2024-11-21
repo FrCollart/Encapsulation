@@ -134,7 +134,15 @@ void SDLWindow::InternalDrawFPS()
 	int textWidth = 0, textHeight = 0;
 	SDL_QueryTexture(texture, NULL, NULL, &textWidth, &textHeight);
 
-	SDL_Rect dstRect = { WINDOW_WIDTH - textWidth - 10, 10, textWidth, textHeight };
+	int padding = 10; // Padding around the text
+	SDL_Rect rect = { WINDOW_WIDTH - textWidth - 100 - padding, 10 - padding, textWidth + 2 * padding, textHeight + 2 * padding };
+
+	// Render the white rectangle
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color
+	SDL_RenderFillRect(renderer, &rect);
+
+
+	SDL_Rect dstRect = { WINDOW_WIDTH - textWidth - 100, 10, textWidth, textHeight };
 
 	SDL_RenderCopy(renderer, texture, NULL, &dstRect);
 

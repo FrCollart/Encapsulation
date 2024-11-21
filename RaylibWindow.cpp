@@ -67,7 +67,12 @@ void RaylibWindow::InternalDrawFPS()
 	std::string fpsText = "FPS: " + std::to_string((int)(timeModule->GetAverageFPS()));
 
 	Vector2 textSize = MeasureTextEx(font, fpsText.c_str(), 20, 1.0f);
-	Vector2 position = { WINDOW_WIDTH - textSize.x - 10, 10 };
+	Vector2 position = { WINDOW_WIDTH - textSize.x - 100, 10 };
+
+	int padding = 10; // Padding around the text
+	Rectangle rect = { position.x - padding, position.y - padding, textSize.x + 2 * padding, textSize.y + 2 * padding };
+
+	DrawRectangleRec(rect, WHITE);
 
 	DrawTextEx(font, fpsText.c_str(), position, 20, 1.0f, BLACK);
 }
