@@ -18,6 +18,51 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\App.cpp" />
+    <ClCompile Include="Source\Ball.cpp" />
+    <ClCompile Include="Source\BallPreview.cpp" />
+    <ClCompile Include="Source\BallsManager.cpp" />
+    <ClCompile Include="Source\DisplayableObject.cpp" />
+    <ClCompile Include="Source\EventHandler.cpp" />
+    <ClCompile Include="Source\Ligma.cpp" />
+    <ClCompile Include="Source\QuadTree.cpp" />
+    <ClCompile Include="Source\RaylibEventHandler.cpp" />
+    <ClCompile Include="Source\RaylibSprite.cpp" />
+    <ClCompile Include="Source\RaylibTests.cpp" />
+    <ClCompile Include="Source\RaylibWindow.cpp" />
+    <ClCompile Include="Source\SDLEventHandler.cpp" />
+    <ClCompile Include="Source\SDLSprite.cpp" />
+    <ClCompile Include="Source\SDLTests.cpp" />
+    <ClCompile Include="Source\SDLWindow.cpp" />
+    <ClCompile Include="Source\Sprite.cpp" />
+    <ClCompile Include="Source\SpritesLoader.cpp" />
+    <ClCompile Include="Source\TimeModule.cpp" />
+    <ClCompile Include="Source\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\App.h" />
+    <ClInclude Include="Source\Ball.h" />
+    <ClInclude Include="Source\BallPreview.h" />
+    <ClInclude Include="Source\BallsManager.h" />
+    <ClInclude Include="Source\DisplayableObject.h" />
+    <ClInclude Include="Source\Edge.h" />
+    <ClInclude Include="Source\EventHandler.h" />
+    <ClInclude Include="Source\GameConsts.h" />
+    <ClInclude Include="Source\QuadTree.h" />
+    <ClInclude Include="Source\RaylibEventHandler.h" />
+    <ClInclude Include="Source\RaylibSprite.h" />
+    <ClInclude Include="Source\RaylibTests.h" />
+    <ClInclude Include="Source\RaylibWindow.h" />
+    <ClInclude Include="Source\SDLEventHandler.h" />
+    <ClInclude Include="Source\SDLSprite.h" />
+    <ClInclude Include="Source\SDLTests.h" />
+    <ClInclude Include="Source\SDLWindow.h" />
+    <ClInclude Include="Source\Sprite.h" />
+    <ClInclude Include="Source\SpritesLoader.h" />
+    <ClInclude Include="Source\TimeModule.h" />
+    <ClInclude Include="Source\Window.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -76,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;$(ProjectDir)\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -94,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;$(ProjectDir)\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -113,7 +158,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;$(ProjectDir)\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -131,7 +176,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2-2.30.9\include;$(ProjectDir)\raylib-5.0_win64_msvc16\include;$(ProjectDir)\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -143,51 +188,6 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;raylib.lib;raylibdll.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="BallPreview.cpp" />
-    <ClCompile Include="BallsManager.cpp" />
-    <ClCompile Include="DisplayableObject.cpp" />
-    <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="Ligma.cpp" />
-    <ClCompile Include="QuadTree.cpp" />
-    <ClCompile Include="RaylibEventHandler.cpp" />
-    <ClCompile Include="RaylibSprite.cpp" />
-    <ClCompile Include="RaylibTests.cpp" />
-    <ClCompile Include="RaylibWindow.cpp" />
-    <ClCompile Include="SDLEventHandler.cpp" />
-    <ClCompile Include="SDLSprite.cpp" />
-    <ClCompile Include="SDLTests.cpp" />
-    <ClCompile Include="SDLWindow.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SpritesLoader.cpp" />
-    <ClCompile Include="TimeModule.cpp" />
-    <ClCompile Include="Window.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="BallPreview.h" />
-    <ClInclude Include="BallsManager.h" />
-    <ClInclude Include="DisplayableObject.h" />
-    <ClInclude Include="Edge.h" />
-    <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="GameConsts.h" />
-    <ClInclude Include="QuadTree.h" />
-    <ClInclude Include="RaylibEventHandler.h" />
-    <ClInclude Include="RaylibSprite.h" />
-    <ClInclude Include="RaylibTests.h" />
-    <ClInclude Include="RaylibWindow.h" />
-    <ClInclude Include="SDLEventHandler.h" />
-    <ClInclude Include="SDLSprite.h" />
-    <ClInclude Include="SDLTests.h" />
-    <ClInclude Include="SDLWindow.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpritesLoader.h" />
-    <ClInclude Include="TimeModule.h" />
-    <ClInclude Include="Window.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
