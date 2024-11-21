@@ -88,7 +88,7 @@ void RaylibWindow::InternalDrawSprite(DisplayableObject* object)
 	);
 }
 
-void RaylibWindow::Cleanup()
+void RaylibWindow::CleanUp()
 {
 	UnloadFont(font);
 	CloseWindow();

@@ -14,7 +14,7 @@ public:
     virtual void Clear() = 0;
     virtual void BeginDraw() = 0;
     virtual void EndDraw() = 0;
-    virtual void Cleanup() = 0;
+    virtual void CleanUp() = 0;
 
     void Draw();
 

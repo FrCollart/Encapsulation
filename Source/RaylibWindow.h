@@ -18,7 +18,7 @@ public:
     void InternalDrawBackground() override;
     void InternalDrawSprite(class DisplayableObject* object) override;
     void InternalDrawFPS() override;
-    void Cleanup() override;
+    void CleanUp() override;
 
 private:
     Font font;

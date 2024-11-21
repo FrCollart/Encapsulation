@@ -323,9 +323,9 @@ void BallsManager::SpawnHoles()
 	holes.push_back(hole);
 	hole = new Hole(BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); //bot left
 	holes.push_back(hole);
-	hole = new Hole(WINDOW_WIDTH - BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); //bot right
+	hole = new Hole(WINDOW_WIDTH - 2.0f * BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); //bot right
 	holes.push_back(hole);
-	hole = new Hole(WINDOW_WIDTH - BALL_RADIUS, BALL_RADIUS, BALL_RADIUS); //top right
+	hole = new Hole(WINDOW_WIDTH - 2.0f * BALL_RADIUS, BALL_RADIUS, BALL_RADIUS); //top right
 	holes.push_back(hole);
 	hole = new Hole(WINDOW_WIDTH / 2 - BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); // bot middle
 	holes.push_back(hole);

@@ -161,7 +161,7 @@ void SDLWindow::InternalDrawSprite(DisplayableObject* object)
 	SDL_RenderCopyEx(renderer, texture, nullptr, &destRect, object->GetOrientation(), &center, SDL_FLIP_NONE);
 }
 
-void SDLWindow::Cleanup()
+void SDLWindow::CleanUp()
 {
 	// If the user closes the window, we need to check if the renderer and window are valid before destroying them
 	if (renderer) SDL_DestroyRenderer(renderer);

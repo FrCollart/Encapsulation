@@ -6,6 +6,11 @@
 
 bool SDLEventHandler::isRunning = true;
 
+SDLEventHandler::SDLEventHandler()
+{
+    isRunning = true;
+}
+
 void SDLEventHandler::HandleEvents()
 {
 	SDL_Event event;
