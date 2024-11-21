@@ -155,8 +155,10 @@ void SDLWindow::InternalDrawSprite(DisplayableObject* object)
 	const void* data = sprite->GetData();
 	SDL_Texture* texture = (SDL_Texture*)data;
 
+	SDL_Point center = { destRect.w / 2, destRect.h / 2 };
+
 	// Draw
-	SDL_RenderCopy(renderer, texture, nullptr, &destRect);
+	SDL_RenderCopyEx(renderer, texture, nullptr, &destRect, object->GetOrientation(), &center, SDL_FLIP_NONE);
 }
 
 void SDLWindow::Cleanup()

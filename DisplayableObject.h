@@ -8,7 +8,10 @@ public:
 
 	float GetX() const { return x; }
 	float GetY() const { return y; }
+	float GetOrientation() const { return orientation; }
 	class Sprite* GetSprite() const { return sprite; }
+
+	void SetOrientation(float orientation) { this->orientation = orientation; }
 
 protected:
 	float x;

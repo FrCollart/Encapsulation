@@ -75,7 +75,17 @@ void RaylibWindow::InternalDrawSprite(DisplayableObject* object)
 	const void* data = sprite->GetData();
 	Texture2D* texture = (Texture2D*)data;
 
-	DrawTexture(*texture, object->GetX(), object->GetY(), WHITE);
+	Vector2 position = { object->GetX(), object->GetY() };
+	Vector2 origin = { (float)texture->width / 2.0f, (float)texture->height / 2.0f };
+
+	DrawTexturePro(
+		*texture,
+		{ 0, 0, (float)texture->width, (float)texture->height }, // Source rectangle
+		{ position.x + origin.x, position.y + origin.y, (float)texture->width, (float)texture->height }, // Destination rectangle
+		origin, // Rotation origin
+		object->GetOrientation(), // Rotation angle in degrees
+		WHITE // Tint
+	);
 }
 
 void RaylibWindow::Cleanup()
