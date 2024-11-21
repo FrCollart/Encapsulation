@@ -41,6 +41,7 @@
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Hole.h" />
     <ClInclude Include="Source\App.h" />
     <ClInclude Include="Source\Ball.h" />
     <ClInclude Include="Source\BallPreview.h" />
@@ -49,6 +50,7 @@
     <ClInclude Include="Source\Edge.h" />
     <ClInclude Include="Source\EventHandler.h" />
     <ClInclude Include="Source\GameConsts.h" />
+    <ClInclude Include="Source\Hole.h" />
     <ClInclude Include="Source\QuadTree.h" />
     <ClInclude Include="Source\RaylibEventHandler.h" />
     <ClInclude Include="Source\RaylibSprite.h" />

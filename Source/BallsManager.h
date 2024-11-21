@@ -12,6 +12,7 @@ public:
 	void CleanUp();
 	void SpawnBalls();
 	void SpawnEdges();
+	void SpawnHoles();
 
 	void HitWhiteBall(int dirX, int dirY);
 
@@ -24,6 +25,7 @@ private:
 	static BallsManager* instance;
 	std::vector<class Ball*> balls;
 	std::vector<class Edge*> edges;
+	std::vector<class Hole*> holes;
 	class QuadTree* quadTree;
 };
 

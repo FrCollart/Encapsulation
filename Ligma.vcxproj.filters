@@ -126,6 +126,8 @@
     <ClInclude Include="Source\SDLTests.h">
       <Filter>LibsTests\Public</Filter>
     </ClInclude>
+    <ClInclude Include="Hole.h" />
+    <ClInclude Include="Source\Hole.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Balls">

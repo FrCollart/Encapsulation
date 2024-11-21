@@ -12,6 +12,7 @@
 #include "QuadTree.h"
 #include "GameConsts.h"
 #include "BallPreview.h"
+#include "Hole.h"
 
 BallsManager* BallsManager::instance = nullptr;
 
@@ -19,14 +20,15 @@ void BallsManager::Initialize()
 {
 
 	SpawnBalls();
-
 	SpawnEdges();
+	SpawnHoles();
 }
 
 void BallsManager::Update(float deltaTime)
 {
 	Rectangle* rect = new Rectangle(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
 	std::vector<std::pair<Ball*, Ball*>> vecCollidingPairs;
+	std::vector<Ball*> ballsToDestoy;
 
 	// to decompose one frame into nSimulationUpdates frames
 	int nSimulationUpdates = 4;
@@ -138,6 +140,17 @@ void BallsManager::Update(float deltaTime)
 
 				}
 
+				// ball Hole collision
+				for (Hole* hole : holes)
+				{
+					float range = hole->GetRadius() + ball->GetRadius();
+					float distance = std::sqrtf(std::powf((hole->GetX() - ball->GetX()), 2) + std::powf((hole->GetY() - ball->GetY()), 2));
+					if (range > distance)
+					{
+						ballsToDestoy.push_back(ball);
+					}
+				}
+
 				//time displacement
 				float intendedSpeed = std::sqrtf(ball->GetAccelerationX() * ball->GetAccelerationX() +
 					ball->GetAccelerationY() * ball->GetAccelerationY());
@@ -179,7 +192,15 @@ void BallsManager::Update(float deltaTime)
 
 			}
 			vecCollidingPairs.clear();
+
+			for (int i = 0; i < ballsToDestoy.size(); i++)
+			{
+				balls.erase(std::remove(balls.begin(), balls.end(), ballsToDestoy[0]), balls.end());
+				delete ballsToDestoy[0];
+			}
+			ballsToDestoy.clear();
 		}
+
 	}
 
 	// Update Ball preview position
@@ -284,6 +305,23 @@ void BallsManager::SpawnEdges()
 
 	edge = new Edge(WINDOW_WIDTH - lineRadius * 1.6f, WINDOW_HEIGHT - lineRadius * 4, WINDOW_WIDTH - lineRadius * 1.6f, lineRadius * 3, lineRadius); //right
 	edges.push_back(edge);
+}
+
+void BallsManager::SpawnHoles()
+{
+	Hole* hole = new Hole(BALL_RADIUS, BALL_RADIUS, BALL_RADIUS); //top left
+	holes.push_back(hole);
+	hole = new Hole(BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); //bot left
+	holes.push_back(hole);
+	hole = new Hole(WINDOW_WIDTH - BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); //bot right
+	holes.push_back(hole);
+	hole = new Hole(WINDOW_WIDTH - BALL_RADIUS, BALL_RADIUS, BALL_RADIUS); //top right
+	holes.push_back(hole);
+	hole = new Hole(WINDOW_WIDTH / 2 - BALL_RADIUS, WINDOW_HEIGHT - BALL_RADIUS, BALL_RADIUS); // bot middle
+	holes.push_back(hole);
+	hole = new Hole(WINDOW_WIDTH / 2 - BALL_RADIUS, BALL_RADIUS, BALL_RADIUS); //top middle
+	holes.push_back(hole);
+
 }
 
 void BallsManager::HitWhiteBall(int dirX, int dirY)
