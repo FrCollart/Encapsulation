@@ -4,14 +4,16 @@
 // C++ dependencies
 #include <iostream>
 
+// Project dependencies
+#include "BallsManager.h"
+
 void EventHandler::OnLeftClickPressed(int x, int y)
 {
-	std::cout << "Left button clicked at ("
-		<< x << ", " << y << ")\n";
+	pressedX = x;
+	pressedY = y;
 }
 
 void EventHandler::OnLeftClickReleased(int x, int y)
 {
-	std::cout << "Left button released at ("
-		<< x << ", " << y << ")\n";
+	BallsManager::GetInstance()->HitWhiteBall(pressedX - x,pressedY - y);
 }

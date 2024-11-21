@@ -7,5 +7,9 @@ public:
 
 	void OnLeftClickPressed(int x, int y);
 	void OnLeftClickReleased(int x, int y);
+
+private:
+	int pressedX = 0;
+	int pressedY = 0;
 };
 

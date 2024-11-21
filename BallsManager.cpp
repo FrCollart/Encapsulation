@@ -263,6 +263,13 @@ void BallsManager::SpawnBalls()
 	balls.push_back(ball);
 }
 
+void BallsManager::HitWhiteBall(int dirX, int dirY)
+{
+	Ball* whiteBall = balls[0];
+	whiteBall->SetVelocityX(dirX * 5.0f);
+	whiteBall->SetVelocityY(dirY * 5.0f);
+}
+
 BallsManager* BallsManager::GetInstance()
 {
 	if (instance == nullptr) instance = new BallsManager();

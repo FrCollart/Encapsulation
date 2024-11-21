@@ -12,6 +12,8 @@ public:
 	void CleanUp();
 	void SpawnBalls();
 
+	void HitWhiteBall(int dirX, int dirY);
+
 	static BallsManager* GetInstance();
 
 	std::vector<class Ball*> GetBalls() const { return balls; }
