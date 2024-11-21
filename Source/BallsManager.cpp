@@ -193,8 +193,19 @@ void BallsManager::Update(float deltaTime)
 
 			for (int i = 0; i < ballsToDestoy.size(); i++)
 			{
-				balls.erase(std::remove(balls.begin(), balls.end(), ballsToDestoy[0]), balls.end());
-				delete ballsToDestoy[0];
+				if (ballsToDestoy[0] == balls[0] && balls.size() > 1) // don't destroy white ball unless it is the last one
+				{
+					balls[0]->SetX(WINDOW_WIDTH * 1.75f / 7.f);
+					balls[0]->SetY(WINDOW_HEIGHT / 2.f - BALL_RADIUS);
+					balls[0]->SetVelocityX(0.f);
+					balls[0]->SetVelocityY(0.f);
+					ballsToDestoy.erase(ballsToDestoy.begin());
+				}
+				else
+				{
+					balls.erase(std::remove(balls.begin(), balls.end(), ballsToDestoy[0]), balls.end());
+					delete ballsToDestoy[0];
+				}
 			}
 			ballsToDestoy.clear();
 		}
