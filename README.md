@@ -28,7 +28,7 @@ Ce dépôt ne contient pas de release, vous pouvez les générer vous-même (via
 Une fois l'application lancée, Entrez 1 dans la console pour rendre avec SDL, appuyez sur 2 pour rendre avec raylib. Il n'y a pas de possibilité de changer cela à la compilation mais mettre un fichier d'input est tout à fait envisageable. Nous avons pris la décision de pouvoir changer à volonté de librairie de rendu au runtime.
 Pour changer de librairie de rendu, fermez simplement la fenêtre (pas la console) et entrez à nouveau 1 ou 2.
 
-Une fois l'application lancée, ùaintenez clic gauche pour apercevoir l'angle dans lequel votre boule va partir. Plus vous vous éloignez avec votre souris, plus l'impact sera fort et plus la boule partira vite.
+Une fois l'application lancée, maintenez clic gauche pour apercevoir l'angle dans lequel votre boule va partir. Plus vous vous éloignez avec votre souris, plus l'impact sera fort et plus la boule partira vite.
 
 Amusez-vous bien.
 
