@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source\Ball.cpp">
-      <Filter>Balls\Private</Filter>
-    </ClCompile>
     <ClCompile Include="Source\BallPreview.cpp">
       <Filter>Balls\Private</Filter>
     </ClCompile>
@@ -11,9 +8,6 @@
       <Filter>Balls\Private</Filter>
     </ClCompile>
     <ClCompile Include="Source\App.cpp">
-      <Filter>Core\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DisplayableObject.cpp">
       <Filter>Core\Private</Filter>
     </ClCompile>
     <ClCompile Include="Source\Ligma.cpp">
@@ -61,24 +55,24 @@
     <ClCompile Include="Source\SDLTests.cpp">
       <Filter>LibsTests\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object.cpp">
+      <Filter>Objects\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ball.cpp">
+      <Filter>Objects\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DisplayableObject.cpp">
+      <Filter>Objects\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Ball.h">
-      <Filter>Balls\Public</Filter>
-    </ClInclude>
     <ClInclude Include="Source\BallPreview.h">
       <Filter>Balls\Public</Filter>
     </ClInclude>
     <ClInclude Include="Source\BallsManager.h">
       <Filter>Balls\Public</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Edge.h">
-      <Filter>Balls\Public</Filter>
-    </ClInclude>
     <ClInclude Include="Source\App.h">
-      <Filter>Core\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DisplayableObject.h">
       <Filter>Core\Public</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameConsts.h">
@@ -126,8 +120,21 @@
     <ClInclude Include="Source\SDLTests.h">
       <Filter>LibsTests\Public</Filter>
     </ClInclude>
-    <ClInclude Include="Hole.h" />
-    <ClInclude Include="Source\Hole.h" />
+    <ClInclude Include="Source\Object.h">
+      <Filter>Objects\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Ball.h">
+      <Filter>Objects\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Edge.h">
+      <Filter>Objects\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Hole.h">
+      <Filter>Objects\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DisplayableObject.h">
+      <Filter>Objects\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Balls">
@@ -186,6 +193,15 @@
     </Filter>
     <Filter Include="LibsTests\Public">
       <UniqueIdentifier>{bdfb560b-6dec-4fa4-8270-4b4d838882f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{9c917e28-cfc0-435f-b6b9-ba7eb623ec7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Public">
+      <UniqueIdentifier>{92173763-4ba2-445e-a265-53b948788445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Private">
+      <UniqueIdentifier>{42905ffa-fcae-4a52-9273-21bbc5719b02}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

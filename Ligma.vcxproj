@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Object.cpp" />
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Ball.cpp" />
     <ClCompile Include="Source\BallPreview.cpp" />
@@ -41,7 +42,7 @@
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hole.h" />
+    <ClInclude Include="Source\Object.h" />
     <ClInclude Include="Source\App.h" />
     <ClInclude Include="Source\Ball.h" />
     <ClInclude Include="Source\BallPreview.h" />

@@ -144,8 +144,8 @@ void SDLWindow::InternalDrawFPS()
 void SDLWindow::InternalDrawSprite(DisplayableObject* object)
 {
 	SDL_Rect destRect = SDL_Rect();
-	destRect.x = object->GetX();
-	destRect.y = object->GetY();
+	destRect.x = (int)object->GetX();
+	destRect.y = (int)object->GetY();
 
 	Sprite* sprite = object->GetSprite();
 	destRect.w = sprite->GetWidth();

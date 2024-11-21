@@ -26,7 +26,6 @@ private:
 	std::vector<class Ball*> balls;
 	std::vector<class Edge*> edges;
 	std::vector<class Hole*> holes;
-	class QuadTree* quadTree;
 };
 
 constexpr float FRICTION_FACTOR = 0.8f;

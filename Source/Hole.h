@@ -1,17 +1,16 @@
 #pragma once
 
-class Hole
+// Abstract class
+#include "Object.h"
+
+class Hole : public Object
 {
 public:
-	Hole(float x, float y, float radius) : posX(x), posY(y), radius(radius) {}
+	Hole(float x, float y, float radius) : Object(x, y), radius(radius) {}
 
-	float GetX() { return posX; }
-	float GetY() { return posY; }
 	float GetRadius() { return radius; }
 
 
 private:
-	float posX;
-	float posY;
 	float radius;
 };

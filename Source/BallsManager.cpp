@@ -37,8 +37,6 @@ void BallsManager::Update(float deltaTime)
 
 	for (int i = 0; i < nSimulationUpdates; i++)
 	{
-		delete quadTree;
-
 		//Setup Collision Detection for balls
 		for (Ball* ball : balls)
 		{
@@ -110,7 +108,7 @@ void BallsManager::Update(float deltaTime)
 					float closestPointX = edge->GetStartX() + t * lineX1;
 					float closestPointY = edge->GetStartY() + t * lineY1;
 
-					float distance = std::sqrtf(std::pow(ball->GetX() - closestPointX, 2) + std::powf(ball->GetY() - closestPointY, 2));
+					float distance = std::sqrtf((float)std::pow(ball->GetX() - closestPointX, 2) + (float)std::powf(ball->GetY() - closestPointY, 2));
 
 					if (distance <= (ball->GetRadius() + edge->GetRadius()))
 					{
@@ -216,6 +214,7 @@ void BallsManager::CleanUp()
 {
 	balls.clear();
 	edges.clear();
+	holes.clear();
 }
 
 void BallsManager::SpawnBalls()
@@ -224,7 +223,7 @@ void BallsManager::SpawnBalls()
 	Sprite* sprite = SpritesLoader::GetSprites()[0];
 	Ball* ball = new Ball(WINDOW_WIDTH * 1.75f / 7.f, WINDOW_HEIGHT / 2.f - BALL_RADIUS, BALL_RADIUS, 0.f, 0.f, sprite);
 	balls.push_back(ball);
-
+	
 	//red and blue from left to right and top to bot
 
 	//frontmost
